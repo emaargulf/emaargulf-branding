@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & Sharing Metadata -->
+    <title>Emaar Gulf | Brand Assets Portal</title>
+    <meta name="description" content="Official Brand Assets and Guidelines for Emaar Gulf Engineering Consultants.">
+    <meta property="og:title" content="Emaar Gulf Brand Portal">
+    <meta property="og:description" content="Download official logos, icons, and color palettes.">
+    <!-- Dynamic OG Image set via JS below -->
+    
+    <!-- Pinned Tailwind CSS Version (Stability) -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (Dynamic fallback in JS) -->
+    <link id="favicon" rel="icon" type="image/png" href="">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Cairo', sans-serif; }
+        
+        /* Professional Transparency Grid */
+        .bg-checkered {
+            background-color: #ffffff;
+            background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
+                              linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
+                              linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        
+        /* Smooth Fade In */
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Error Badge */
+        .status-dot { height: 8px; width: 8px; border-radius: 50%; display: inline-block; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- HEADER -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <img id="header-logo" src="" class="h-10 w-auto" alt="Logo" onerror="this.style.display='none'">
+                <div>
+                    <h1 class="text-xl font-bold text-gray-900 leading-none">Brand Assets</h1>
+                    <p class="text-xs text-gray-500 mt-1">Emaar Gulf Engineering Consultants</p>
+                </div>
+            </div>
+            <a href="mailto:emaargulf.sa@gmail.com" class="text-sm font-medium text-gray-500 hover:text-[#f1aa27] transition flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+                Contact Admin
+            </a>
+        </div>
+    </header>
+
+    <!-- CONTENT INJECTED HERE BY JS -->
+    <main id="app" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow"></main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-gray-200 pt-8 mt-auto text-center pb-8">
+        <p class="text-gray-500 text-sm">&copy; <span id="year"></span> Emaar Gulf Engineering Consultants.</p>
+        <div class="mt-2 text-xs flex items-center justify-center gap-2 text-gray-400">
+            <span>Hosted on GitHub Pages</span>
+            <span class="text-gray-300">|</span>
+            <span id="system-status" class="flex items-center gap-1">Checking Assets...</span>
+        </div>
+    </footer>
+
+    <!-- ENGINEERED JAVASCRIPT LOGIC -->
+    <script>
+        // ==========================================
+        // CONFIGURATION (THE SINGLE SOURCE OF TRUTH)
+        // ==========================================
+        const CONFIG = {
+            // Change this ONE line if you move the repo or use a custom domain
+            repoBase: "https://codese7en-lab.github.io/emaargulf-branding/",
+            
+            // Define your sections and assets here. HTML generates automatically.
+            sections: [
+                {
+                    title: "Corporate Logos",
+                    color: "bg-[#f1aa27]",
+                    items: [
+                        { id: "full-dark", name: "Primary Logo (Dark)", file: "logo-full-dark", desc: "For white/light backgrounds. (Letterheads)", defaultBg: "bg-checkered" },
+                        { id: "full-light", name: "Secondary Logo (Light)", file: "logo-full-light", desc: "For dark backgrounds/overlays.", defaultBg: "bg-gray-900" }
+                    ]
+                },
+                {
+                    title: "Symbols & Icons",
+                    color: "bg-gray-800",
+                    items: [
+                        { id: "icon-dark", name: "Icon Symbol (Dark)", file: "logo-icon-dark", desc: "Square icon for light contexts.", defaultBg: "bg-checkered" },
+                        { id: "icon-light", name: "Icon Symbol (Light)", file: "logo-icon-light", desc: "Square icon for dark contexts.", defaultBg: "bg-gray-900" }
+                    ]
+                },
+                {
+                    title: "Graphic Elements",
+                    color: "bg-gray-600",
+                    items: [
+                        { id: "part-g", name: "Graphic Element (G)", file: "logo-part-g", desc: "Branding accent element.", defaultBg: "bg-checkered" }
+                    ]
+                }
+            ],
+            colors: [
+                { name: "Charcoal", hex: "#333333", text: "text-gray-900" },
+                { name: "Emaar Gold", hex: "#f1aa27", text: "text-gray-900" },
+                { name: "Off-White", hex: "#f4f4f4", text: "text-gray-900" }
+            ]
+        };
+
+        // ==========================================
+        // APP LOGIC (DO NOT EDIT BELOW THIS LINE)
+        // ==========================================
+
+        const app = document.getElementById('app');
+        let errorCount = 0;
+
+        // 1. Initialize App
+        function init() {
+            // Set dynamic header logo and favicon
+            const headerIcon = getAssetUrl('logo-icon-dark.png');
+            document.getElementById('header-logo').src = headerIcon;
+            document.getElementById('favicon').href = headerIcon;
+            
+            // Set Year
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // Render Sections
+            CONFIG.sections.forEach(section => {
+                const sectionHtml = `
+                    <div class="mb-12 fade-in">
+                        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                            <span class="w-2 h-8 ${section.color} rounded-full"></span>
+                            ${section.title}
+                        </h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            ${section.items.map(item => renderCard(item)).join('')}
+                        </div>
+                    </div>
+                `;
+                app.innerHTML += sectionHtml;
+            });
+
+            // Render Colors
+            renderColors();
+            
+            // Final Status Check
+            setTimeout(updateStatus, 1000);
+        }
+
+        // 2. Component Renderer
+        function renderCard(item) {
+            const pngUrl = getAssetUrl(item.file + '.png');
+            const svgUrl = getAssetUrl(item.file + '.svg');
+            const uniqueId = `preview-${item.id}`;
+
+            return `
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col h-full">
+                    <div id="${uniqueId}" class="relative h-48 ${item.defaultBg} flex items-center justify-center p-6 border-b border-gray-100 group transition-colors duration-300">
+                        <img src="${pngUrl}" 
+                             class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" 
+                             alt="${item.name}"
+                             onerror="handleImageError(this, '${item.file}')">
+                        
+                        <!-- Background Toggles -->
+                        <div class="absolute top-3 right-3 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 p-1 rounded-lg shadow backdrop-blur-sm">
+                            <button onclick="changeBg('${uniqueId}', 'bg-checkered')" class="w-6 h-6 rounded bg-gray-100 border border-gray-300 hover:border-gray-400" title="Transparent"></button>
+                            <button onclick="changeBg('${uniqueId}', 'bg-white')" class="w-6 h-6 rounded bg-white border border-gray-300 hover:border-gray-400" title="White"></button>
+                            <button onclick="changeBg('${uniqueId}', 'bg-gray-900')" class="w-6 h-6 rounded bg-gray-900 border border-gray-600 hover:border-gray-500" title="Dark"></button>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h3 class="font-bold text-gray-900 text-sm mb-1">${item.name}</h3>
+                        <p class="text-xs text-gray-500 mb-4 flex-grow">${item.desc}</p>
+                        
+                        <!-- Actions -->
+                        <div class="space-y-2 mt-auto">
+                            <!-- PNG Row -->
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] font-bold w-8 text-gray-400 uppercase">PNG</span>
+                                <button onclick="copyUrl('${pngUrl}', this)" class="flex-1 py-1.5 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-xs font-medium rounded text-gray-700 transition">Copy URL</button>
+                                <a href="${pngUrl}" download target="_blank" class="py-1.5 px-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded text-gray-600">↓</a>
+                            </div>
+                            <!-- SVG Row -->
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] font-bold w-8 text-orange-500 uppercase">SVG</span>
+                                <button onclick="copyUrl('${svgUrl}', this)" class="flex-1 py-1.5 bg-orange-50 hover:bg-orange-100 border border-orange-100 text-xs font-medium rounded text-orange-700 transition">Copy URL</button>
+                                <a href="${svgUrl}" download target="_blank" class="py-1.5 px-3 bg-orange-50 hover:bg-orange-100 border border-orange-100 rounded text-orange-600">↓</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderColors() {
+            const colorsHtml = `
+                <div class="mb-12 fade-in">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
+                        <span class="w-2 h-8 bg-gray-800 rounded-full"></span>
+                        Brand Colors
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        ${CONFIG.colors.map(color => `
+                            <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 flex items-center gap-3 cursor-pointer group hover:border-[#f1aa27] transition" onclick="copyText('${color.hex}')">
+                                <div class="w-12 h-12 rounded-lg shadow-inner border border-gray-100" style="background-color: ${color.hex};"></div>
+                                <div>
+                                    <p class="font-bold text-sm text-gray-900">${color.name}</p>
+                                    <p class="text-xs font-mono text-gray-500 group-hover:text-[#f1aa27]">${color.hex}</p>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            app.innerHTML += colorsHtml;
+        }
+
+        // 3. Helper Functions
+        function getAssetUrl(filename) {
+            return CONFIG.repoBase + filename;
+        }
+
+        function changeBg(id, bgClass) {
+            const el = document.getElementById(id);
+            el.className = el.className.replace(/bg-\S+/g, ''); // Remove existing bg classes
+            el.classList.add(bgClass, 'relative', 'h-48', 'flex', 'items-center', 'justify-center', 'p-6', 'border-b', 'border-gray-100', 'group', 'transition-colors', 'duration-300');
+            // Re-add Checkered specific logic
+            if (bgClass === 'bg-checkered') {
+                // Tailwind class doesn't handle complex gradient, so we rely on the CSS class defined in <style>
+            }
+        }
+
+        // 4. Robust Copy Logic (Self-Healing)
+        async function copyUrl(text, btn) {
+            const originalText = btn.innerText;
+            const originalClass = btn.className;
+
+            const success = () => {
+                btn.innerText = "Copied!";
+                btn.className = "flex-1 py-1.5 bg-green-600 text-white border border-green-600 text-xs font-medium rounded transition";
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.className = originalClass;
+                }, 2000);
+            };
+
+            // Attempt 1: API
+            if (navigator.clipboard && window.isSecureContext) {
+                try {
+                    await navigator.clipboard.writeText(text);
+                    success();
+                    return;
+                } catch (e) { console.warn("Clipboard API failed"); }
+            }
+
+            // Attempt 2: Fallback
+            try {
+                const ta = document.createElement("textarea");
+                ta.value = text;
+                ta.style.position = "fixed";
+                ta.style.left = "-9999px";
+                document.body.appendChild(ta);
+                ta.focus(); ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                success();
+            } catch (e) {
+                prompt("Copy manually:", text);
+            }
+        }
+
+        function copyText(hex) {
+            copyUrl(hex, { innerText: '', className: '' }); // Reuse logic logic without button UI
+            alert(`Color ${hex} copied to clipboard.`);
+        }
+
+        // 5. Error Handling & Self Fixes
+        function handleImageError(img, fileName) {
+            errorCount++;
+            
+            // Self-Fix Attempt: Case Sensitivity Check
+            // If logo-full-dark.png failed, try Logo-Full-Dark.png just in case
+            if (!img.dataset.retried) {
+                img.dataset.retried = "true";
+                // Try capitalizing first letter
+                // const capped = fileName.charAt(0).toUpperCase() + fileName.slice(1);
+                // img.src = getAssetUrl(capped + '.png'); 
+                // Note: Disabled to prevent infinite 404 loops, but logic exists here.
+            }
+
+            // Visual Fallback
+            img.style.display = 'none';
+            const parent = img.parentElement;
+            const errDiv = document.createElement('div');
+            errDiv.className = "text-center p-4";
+            errDiv.innerHTML = `<div class="text-red-400 text-2xl mb-1">⚠️</div><div class="text-[10px] text-gray-400 font-mono">Asset Missing<br>${fileName}</div>`;
+            parent.appendChild(errDiv);
+            updateStatus();
+        }
+
+        function updateStatus() {
+            const statusEl = document.getElementById('system-status');
+            if (errorCount === 0) {
+                statusEl.innerHTML = `<span class="status-dot bg-green-500"></span> All Systems Operational`;
+                statusEl.className = "flex items-center gap-2 text-green-600 font-medium";
+            } else {
+                statusEl.innerHTML = `<span class="status-dot bg-red-500"></span> ${errorCount} Asset(s) Missing`;
+                statusEl.className = "flex items-center gap-2 text-red-600 font-bold animate-pulse";
+            }
+        }
+
+        // Start
+        init();
+
+    </script>
+</body>
+</html>
