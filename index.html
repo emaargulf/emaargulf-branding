@@ -9,7 +9,8 @@
     <meta name="description" content="Official Brand Assets and Guidelines for Emaar Gulf Engineering Consultants.">
     <meta property="og:title" content="Emaar Gulf Brand Portal">
     <meta property="og:description" content="Download official logos, icons, and color palettes.">
-    <!-- Dynamic OG Image set via JS below -->
+    <!-- UPDATED: Pointing to new emaargulf repo -->
+    <meta property="og:image" content="https://emaargulf.github.io/emaargulf-branding/logo-full-dark.png">
     
     <!-- Pinned Tailwind CSS Version (Stability) -->
     <script src="https://cdn.tailwindcss.com/3.4.1"></script>
@@ -19,8 +20,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Favicon (Dynamic fallback in JS) -->
-    <link id="favicon" rel="icon" type="image/png" href="">
+    <!-- Favicon (Dynamic fallback in JS, but set default here) -->
+    <link id="favicon" rel="icon" type="image/png" href="https://emaargulf.github.io/emaargulf-branding/logo-icon-dark.png">
     
     <style>
         body { font-family: 'Inter', sans-serif; }
@@ -86,8 +87,8 @@
         // CONFIGURATION (THE SINGLE SOURCE OF TRUTH)
         // ==========================================
         const CONFIG = {
-            // Change this ONE line if you move the repo or use a custom domain
-            repoBase: "https://codese7en-lab.github.io/emaargulf-branding/",
+            // UPDATED: Now pointing to the 'emaargulf' organization
+            repoBase: "https://emaargulf.github.io/emaargulf-branding/",
             
             // Define your sections and assets here. HTML generates automatically.
             sections: [
@@ -294,16 +295,6 @@
         function handleImageError(img, fileName) {
             errorCount++;
             
-            // Self-Fix Attempt: Case Sensitivity Check
-            // If logo-full-dark.png failed, try Logo-Full-Dark.png just in case
-            if (!img.dataset.retried) {
-                img.dataset.retried = "true";
-                // Try capitalizing first letter
-                // const capped = fileName.charAt(0).toUpperCase() + fileName.slice(1);
-                // img.src = getAssetUrl(capped + '.png'); 
-                // Note: Disabled to prevent infinite 404 loops, but logic exists here.
-            }
-
             // Visual Fallback
             img.style.display = 'none';
             const parent = img.parentElement;
