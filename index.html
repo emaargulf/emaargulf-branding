@@ -1,6 +1,6 @@
 <!-- 
     Project: Emaar Gulf Brand Portal
-    Version: 2.1 (Enterprise / Self-Healing)
+    Version: 3.2 (Pure CSS / Pixel-Perfect / Header Logo Fixed)
     Developer: Mohammed Safdar (archengsafdar@gmail.com)
     Path: /index.html (Root)
 -->
@@ -8,15 +8,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="author" content="archengsafdar@gmail.com">
     <meta name="description" content="Official Brand Assets and Guidelines for Emaar Gulf Engineering Consultants.">
     
     <!-- OG Image points to assets folder (Smart Fallback) -->
     <meta property="og:image" content="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-full-dark.png">
     
-    <!-- Pinned Dependencies for Stability -->
-    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
+    <title>Emaar Gulf | Brand Assets Portal</title>
+    
+    <!-- Google Fonts ONLY -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,10 +26,39 @@
     <link id="favicon" rel="icon" type="image/png" href="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-icon-dark.png">
     
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, .brand-font { font-family: 'Cairo', sans-serif; }
+        /* CSS Variables (Exact Tailwind Color Palette) */
+        :root {
+            --primary: #f1aa27; 
+            --dark: #333333;
+            --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
+            --gray-300: #d1d5db; --gray-400: #9ca3af; --gray-500: #6b7280;
+            --gray-600: #4b5563; --gray-700: #374151; --gray-800: #1f2937;
+            --gray-900: #111827;
+            --red-100: #fee2e2; --red-400: #f87171; --red-500: #ef4444; --red-600: #dc2626;
+            --green-500: #22c55e; --green-600: #16a34a;
+            --orange-50: #fff7ed; --orange-100: #ffedd5; --orange-600: #ea580c; --orange-700: #c2410c;
+        }
+
+        /* 1. Base Reset (Tailwind Preflight Emulation) */
+        *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: var(--gray-200); }
+        html { line-height: 1.5; -webkit-text-size-adjust: 100%; font-family: 'Inter', sans-serif; }
+        body { margin: 0; background-color: var(--gray-50); color: var(--gray-800); display: flex; flex-direction: column; min-height: 100vh; }
+        a { color: inherit; text-decoration: inherit; }
+        button, a { cursor: pointer; }
+        button { background-color: transparent; background-image: none; padding: 0; margin: 0; font-family: inherit; font-size: inherit; line-height: inherit; text-transform: none; appearance: button; }
+        h1, h2, h3, h4, p { margin: 0; }
+        img { display: block; max-width: 100%; height: auto; }
+
+        /* Typography */
+        .font-cairo { font-family: 'Cairo', sans-serif; }
+        .text-xs { font-size: 0.75rem; line-height: 1rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .text-[10px] { font-size: 0.625rem; line-height: 1rem; }
+
+        /* Utilities */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
         
-        /* Professional Transparency Grid */
         .bg-checkered {
             background-color: #ffffff;
             background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
@@ -38,51 +68,128 @@
             background-size: 20px 20px;
             background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
+
+        /* Header */
+        .header { background-color: #fff; border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 50; }
+        .container { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; width: 100%; }
+        @media (min-width: 640px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
+        @media (min-width: 1024px) { .container { padding-left: 2rem; padding-right: 2rem; } }
         
-        /* Animations & Utilities */
-        .fade-in { animation: fadeIn 0.5s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .status-dot { height: 8px; width: 8px; border-radius: 50%; display: inline-block; }
+        .header-content { height: 5rem; display: flex; align-items: center; justify-content: space-between; }
+        .header-left { display: flex; align-items: center; gap: 1rem; }
+        .header-logo { height: 2.5rem; width: auto; transition: opacity 300ms ease-in-out; }
+        .header-title { font-family: 'Cairo', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); line-height: 1; }
+        .header-subtitle { font-size: 0.75rem; color: var(--gray-500); margin-top: 0.25rem; }
         
-        /* Error State for Broken Images */
-        .img-error { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; color: #9ca3af; background: #f9fafb; font-size: 0.75rem; text-align: center; padding: 1rem; border: 2px dashed #e5e7eb; border-radius: 0.5rem; }
+        .contact-link { font-size: 0.875rem; font-weight: 500; color: var(--gray-500); display: flex; align-items: center; gap: 0.5rem; transition: color 150ms; }
+        .contact-link:hover { color: var(--primary); }
+        .contact-link svg { height: 1rem; width: 1rem; }
+
+        /* Main Content */
+        .main-content { padding-top: 2.5rem; padding-bottom: 2.5rem; flex-grow: 1; }
+        .section-wrapper { margin-bottom: 3rem; }
+        .section-title { font-family: 'Cairo', sans-serif; font-size: 1.5rem; line-height: 2rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .color-pill { width: 0.5rem; height: 2rem; border-radius: 9999px; }
+
+        /* Grid System */
+        .grid-cards { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 1.5rem; }
+        @media (min-width: 768px) { .grid-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+        @media (min-width: 1024px) { .grid-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+        /* Card Design */
+        .card { background-color: #fff; border-radius: 0.75rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); border: 1px solid var(--gray-200); overflow: hidden; display: flex; flex-direction: column; height: 100%; }
+        .card-preview { position: relative; height: 12rem; display: flex; align-items: center; justify-content: center; padding: 1.5rem; border-bottom: 1px solid var(--gray-100); transition: background-color 300ms, color 300ms; }
+        
+        /* The specific scale group hover from Tailwind */
+        .card-img-wrapper { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; }
+        .card-img { max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1); }
+        .card:hover .card-img { transform: scale(1.05); }
+        
+        .card-actions { position: absolute; top: 0.75rem; right: 0.75rem; display: flex; gap: 0.25rem; opacity: 0; transition: opacity 300ms; background-color: rgba(255, 255, 255, 0.9); padding: 0.25rem; border-radius: 0.5rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); backdrop-filter: blur(4px); }
+        .card:hover .card-actions { opacity: 1; }
+        
+        .btn-bg { width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: 1px solid var(--gray-300); }
+        .btn-bg:hover { border-color: var(--gray-400); }
+        
+        .card-body { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .item-title { font-weight: 700; color: var(--gray-900); font-size: 0.875rem; margin-bottom: 0.25rem; }
+        .item-desc { font-size: 0.75rem; color: var(--gray-500); margin-bottom: 1rem; flex-grow: 1; }
+        
+        .download-row { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
+        .format-label { font-size: 0.625rem; font-weight: 700; width: 2rem; text-transform: uppercase; }
+        .lbl-png { color: var(--gray-400); }
+        .lbl-svg { color: var(--orange-500); }
+        
+        .btn-link { flex: 1; padding-top: 0.375rem; padding-bottom: 0.375rem; font-size: 0.75rem; line-height: 1rem; font-weight: 500; border-radius: 0.25rem; border: 1px solid; transition: all 150ms; text-align: center; }
+        .btn-dl { padding: 0.375rem 0.75rem; border-radius: 0.25rem; border: 1px solid; transition: all 150ms; }
+        
+        /* Specific format button colors */
+        .row-png .btn-link, .row-png .btn-dl { background-color: var(--gray-50); border-color: var(--gray-200); color: var(--gray-700); }
+        .row-png .btn-link:hover, .row-png .btn-dl:hover { background-color: var(--gray-100); }
+        
+        .row-svg .btn-link, .row-svg .btn-dl { background-color: var(--orange-50); border-color: var(--orange-100); color: var(--orange-700); }
+        .row-svg .btn-link:hover, .row-svg .btn-dl:hover { background-color: var(--orange-100); }
+
+        /* Colors Grid */
+        .grid-colors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+        @media (min-width: 768px) { .grid-colors { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+        
+        .color-card { background-color: #fff; padding: 0.75rem; border-radius: 0.5rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); border: 1px solid var(--gray-200); display: flex; align-items: center; gap: 0.75rem; cursor: pointer; transition: all 150ms; }
+        .color-card:hover { border-color: var(--primary); }
+        .color-swatch { width: 3rem; height: 3rem; border-radius: 0.5rem; box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05); border: 1px solid var(--gray-100); }
+        .color-name { font-weight: 700; font-size: 0.875rem; color: var(--gray-900); }
+        .color-hex { font-size: 0.75rem; font-family: monospace; color: var(--gray-500); transition: color 150ms; }
+        .color-card:hover .color-hex { color: var(--primary); }
+
+        /* Footer */
+        .footer { border-top: 1px solid var(--gray-200); padding-top: 2rem; padding-bottom: 2rem; margin-top: auto; text-align: center; }
+        .footer-copy { color: var(--gray-500); font-size: 0.875rem; }
+        .footer-status-row { margin-top: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.75rem; color: var(--gray-400); }
+        .status-dot { height: 0.5rem; width: 0.5rem; border-radius: 9999px; display: inline-block; }
+        .footer-dev { font-size: 0.625rem; color: var(--gray-400); margin-top: 1rem; opacity: 0.6; transition: opacity 150ms; }
+        .footer-dev:hover { opacity: 1; }
+        .footer-dev a { color: var(--gray-500); font-weight: 700; transition: color 150ms; }
+        .footer-dev a:hover { color: var(--primary); }
+
+        .img-error { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; color: var(--gray-400); font-size: 0.75rem; text-align: center; padding: 1rem; border: 2px dashed var(--gray-200); border-radius: 0.5rem; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+<body>
 
     <!-- HEADER -->
-    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <img id="header-logo" src="" class="h-10 w-auto transition-opacity duration-300" alt="Logo" onerror="this.style.opacity='0'">
+    <header class="header">
+        <div class="container header-content">
+            <div class="header-left">
+                <!-- FIXED LOGO LOGIC: Start invisible, fade in on successful load -->
+                <img id="header-logo" class="header-logo" style="opacity: 0;" alt="Emaar Gulf Logo" onload="this.style.opacity='1'" onerror="this.style.display='none'">
                 <div>
-                    <h1 class="text-xl font-bold text-gray-900 leading-none">Brand Assets</h1>
-                    <p class="text-xs text-gray-500 mt-1">Emaar Gulf Engineering Consultants</p>
+                    <h1 class="header-title">Brand Assets</h1>
+                    <p class="header-subtitle">Emaar Gulf Engineering Consultants</p>
                 </div>
             </div>
-            <a href="mailto:emaargulf.sa@gmail.com" class="text-sm font-medium text-gray-500 hover:text-[#f1aa27] transition flex items-center gap-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            <a href="mailto:emaargulf.sa@gmail.com" class="contact-link">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 Contact Admin
             </a>
         </div>
     </header>
 
     <!-- CONTENT -->
-    <main id="app" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow"></main>
+    <main id="app" class="container main-content"></main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-gray-200 pt-8 mt-auto text-center pb-8 bg-white">
-        <p class="text-gray-500 text-sm">&copy; <span id="year"></span> Emaar Gulf Engineering Consultants.</p>
-        
-        <!-- Diagnostics & Attribution -->
-        <div class="mt-3 flex flex-col items-center gap-2">
-            <div class="text-xs flex items-center justify-center gap-2 text-gray-400">
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-copy">&copy; <span id="year"></span> Emaar Gulf Engineering Consultants.</p>
+            
+            <!-- Diagnostics & Attribution -->
+            <div class="footer-status-row">
                 <span>Hosted on GitHub Pages</span>
-                <span class="text-gray-300">|</span>
-                <span id="system-status" class="flex items-center gap-1 font-mono">Initializing...</span>
+                <span style="color: var(--gray-300)">|</span>
+                <span id="system-status" style="display: flex; align-items: center; gap: 0.25rem; font-family: monospace;">Initializing...</span>
             </div>
-            <p class="text-[10px] text-gray-400 opacity-60 hover:opacity-100 transition">
-                Engineered by <a href="mailto:archengsafdar@gmail.com" class="text-gray-500 hover:text-[#f1aa27] font-bold transition">archengsafdar@gmail.com</a>
+            <p class="footer-dev">
+                Engineered by <a href="mailto:archengsafdar@gmail.com">archengsafdar@gmail.com</a>
             </p>
         </div>
     </footer>
@@ -92,37 +199,37 @@
         // --- CONFIGURATION ---
         const CONFIG = {
             repoBase: "https://emaargulf.github.io/emaargulf-branding/",
-            assetsPath: "assets/logos/", // Looking inside the 'assets/logos' folder
+            assetsPath: "assets/logos/", 
             
             sections: [
                 {
                     title: "Corporate Logos",
-                    color: "bg-[#f1aa27]",
+                    color: "background-color: var(--primary);",
                     items: [
                         { id: "full-dark", name: "Primary Logo (Dark)", file: "logo-full-dark", desc: "For white/light backgrounds. (Letterheads)", defaultBg: "bg-checkered" },
-                        { id: "full-light", name: "Secondary Logo (Light)", file: "logo-full-light", desc: "For dark backgrounds/overlays.", defaultBg: "bg-gray-900" }
+                        { id: "full-light", name: "Secondary Logo (Light)", file: "logo-full-light", desc: "For dark backgrounds/overlays.", defaultBg: "background-color: var(--gray-900);" }
                     ]
                 },
                 {
                     title: "Symbols & Icons",
-                    color: "bg-gray-800",
+                    color: "background-color: var(--gray-800);",
                     items: [
                         { id: "icon-dark", name: "Icon Symbol (Dark)", file: "logo-icon-dark", desc: "Square icon for light contexts.", defaultBg: "bg-checkered" },
-                        { id: "icon-light", name: "Icon Symbol (Light)", file: "logo-icon-light", desc: "Square icon for dark contexts.", defaultBg: "bg-gray-900" }
+                        { id: "icon-light", name: "Icon Symbol (Light)", file: "logo-icon-light", desc: "Square icon for dark contexts.", defaultBg: "background-color: var(--gray-900);" }
                     ]
                 },
                 {
                     title: "Graphic Elements",
-                    color: "bg-gray-600",
+                    color: "background-color: var(--gray-600);",
                     items: [
                         { id: "part-g", name: "Graphic Element (G)", file: "logo-part-g", desc: "Branding accent element.", defaultBg: "bg-checkered" }
                     ]
                 }
             ],
             colors: [
-                { name: "Charcoal", hex: "#333333", text: "text-gray-900" },
-                { name: "Emaar Gold", hex: "#f1aa27", text: "text-gray-900" },
-                { name: "Off-White", hex: "#f4f4f4", text: "text-gray-900" }
+                { name: "Charcoal", hex: "#333333" },
+                { name: "Emaar Gold", hex: "#f1aa27" },
+                { name: "Off-White", hex: "#f4f4f4" }
             ]
         };
 
@@ -130,20 +237,20 @@
         let errorCount = 0;
 
         function init() {
-            // Set Dynamic Header & Date
+            // Dynamic Header Logo Binding
             const headerIcon = getAssetUrl('logo-icon-dark.png');
             document.getElementById('header-logo').src = headerIcon;
+            
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            // Render Sections
             CONFIG.sections.forEach(section => {
                 const sectionHtml = `
-                    <div class="mb-12 fade-in">
-                        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-                            <span class="w-2 h-8 ${section.color} rounded-full"></span>
+                    <div class="section-wrapper fade-in">
+                        <h2 class="section-title">
+                            <span class="color-pill" style="${section.color}"></span>
                             ${section.title}
                         </h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="grid-cards">
                             ${section.items.map(item => renderCard(item)).join('')}
                         </div>
                     </div>
@@ -152,50 +259,45 @@
             });
 
             renderColors();
-            
-            // Run Diagnostic Check after slight delay to allow image load attempts
             setTimeout(updateStatus, 1000);
         }
 
-        // Component: Asset Card
         function renderCard(item) {
             const pngUrl = getAssetUrl(item.file + '.png');
             const svgUrl = getAssetUrl(item.file + '.svg');
             const uniqueId = `preview-${item.id}`;
+            const isCheckered = item.defaultBg === "bg-checkered";
+            const inlineStyle = isCheckered ? "" : `style="${item.defaultBg}"`;
+            const bgClass = isCheckered ? "bg-checkered" : "";
 
             return `
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col h-full hover:shadow-md transition-shadow">
-                    <div id="${uniqueId}" class="relative h-48 ${item.defaultBg} flex items-center justify-center p-6 border-b border-gray-100 group transition-colors duration-300">
-                        <img src="${pngUrl}" 
-                             class="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105" 
-                             alt="${item.name}" 
-                             onerror="handleImageError(this, '${item.file}')">
+                <div class="card">
+                    <div id="${uniqueId}" class="card-preview ${bgClass}" ${inlineStyle}>
+                        <div class="card-img-wrapper">
+                            <img src="${pngUrl}" class="card-img" alt="${item.name}" onerror="handleImageError(this, '${item.file}')">
+                        </div>
                         
-                        <!-- Background Toggles -->
-                        <div class="absolute top-3 right-3 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 p-1 rounded-lg shadow backdrop-blur-sm">
-                            <button onclick="changeBg('${uniqueId}', 'bg-checkered')" class="w-6 h-6 rounded bg-gray-100 border border-gray-300 hover:border-gray-400" title="Transparent"></button>
-                            <button onclick="changeBg('${uniqueId}', 'bg-white')" class="w-6 h-6 rounded bg-white border border-gray-300 hover:border-gray-400" title="White"></button>
-                            <button onclick="changeBg('${uniqueId}', 'bg-gray-900')" class="w-6 h-6 rounded bg-gray-900 border border-gray-600 hover:border-gray-500" title="Dark"></button>
+                        <div class="card-actions">
+                            <button onclick="changeBg('${uniqueId}', 'bg-checkered')" class="btn-bg bg-checkered" title="Transparent"></button>
+                            <button onclick="changeBg('${uniqueId}', 'white')" class="btn-bg" style="background-color: white;" title="White"></button>
+                            <button onclick="changeBg('${uniqueId}', 'var(--gray-900)')" class="btn-bg" style="background-color: var(--gray-900); border-color: var(--gray-600);" title="Dark"></button>
                         </div>
                     </div>
                     
-                    <div class="p-5 flex flex-col flex-grow">
-                        <h3 class="font-bold text-gray-900 text-sm mb-1">${item.name}</h3>
-                        <p class="text-xs text-gray-500 mb-4 flex-grow">${item.desc}</p>
+                    <div class="card-body">
+                        <h3 class="item-title">${item.name}</h3>
+                        <p class="item-desc">${item.desc}</p>
                         
-                        <!-- Actions -->
-                        <div class="space-y-2 mt-auto">
-                            <!-- PNG Row -->
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold w-8 text-gray-400 uppercase">PNG</span>
-                                <button onclick="copyUrl('${pngUrl}', this)" class="flex-1 py-1.5 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-xs font-medium rounded text-gray-700 transition active:scale-95">Copy URL</button>
-                                <a href="${pngUrl}" download target="_blank" class="py-1.5 px-3 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded text-gray-600 active:scale-95">↓</a>
+                        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
+                            <div class="download-row row-png">
+                                <span class="format-label lbl-png">PNG</span>
+                                <button onclick="copyUrl('${pngUrl}', this)" class="btn-link">Copy URL</button>
+                                <a href="${pngUrl}" download target="_blank" class="btn-dl">↓</a>
                             </div>
-                            <!-- SVG Row -->
-                            <div class="flex items-center gap-2">
-                                <span class="text-[10px] font-bold w-8 text-orange-500 uppercase">SVG</span>
-                                <button onclick="copyUrl('${svgUrl}', this)" class="flex-1 py-1.5 bg-orange-50 hover:bg-orange-100 border border-orange-100 text-xs font-medium rounded text-orange-700 transition active:scale-95">Copy URL</button>
-                                <a href="${svgUrl}" download target="_blank" class="py-1.5 px-3 bg-orange-50 hover:bg-orange-100 border border-orange-100 rounded text-orange-600 active:scale-95">↓</a>
+                            <div class="download-row row-svg">
+                                <span class="format-label lbl-svg">SVG</span>
+                                <button onclick="copyUrl('${svgUrl}', this)" class="btn-link">Copy URL</button>
+                                <a href="${svgUrl}" download target="_blank" class="btn-dl">↓</a>
                             </div>
                         </div>
                     </div>
@@ -205,18 +307,18 @@
 
         function renderColors() {
             const colorsHtml = `
-                <div class="mb-12 fade-in">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">
-                        <span class="w-2 h-8 bg-gray-800 rounded-full"></span>
+                <div class="section-wrapper fade-in">
+                    <h2 class="section-title">
+                        <span class="color-pill" style="background-color: var(--gray-800);"></span>
                         Brand Colors
                     </h2>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="grid-colors">
                         ${CONFIG.colors.map(color => `
-                            <div class="bg-white p-3 rounded-lg shadow-sm border border-gray-200 flex items-center gap-3 cursor-pointer group hover:border-[#f1aa27] transition transform hover:scale-105" onclick="copyText('${color.hex}')">
-                                <div class="w-12 h-12 rounded-lg shadow-inner border border-gray-100" style="background-color: ${color.hex};"></div>
+                            <div class="color-card group" onclick="copyText('${color.hex}')">
+                                <div class="color-swatch" style="background-color: ${color.hex};"></div>
                                 <div>
-                                    <p class="font-bold text-sm text-gray-900">${color.name}</p>
-                                    <p class="text-xs font-mono text-gray-500 group-hover:text-[#f1aa27]">${color.hex}</p>
+                                    <p class="color-name">${color.name}</p>
+                                    <p class="color-hex">${color.hex}</p>
                                 </div>
                             </div>
                         `).join('')}
@@ -226,30 +328,41 @@
             app.innerHTML += colorsHtml;
         }
 
-        // --- UTILITIES ---
         function getAssetUrl(filename) { return CONFIG.repoBase + CONFIG.assetsPath + filename; }
 
-        function changeBg(id, bgClass) {
+        function changeBg(id, value) {
             const el = document.getElementById(id);
-            el.className = el.className.replace(/bg-\S+/g, ''); // Remove existing
-            el.classList.add(bgClass, 'relative', 'h-48', 'flex', 'items-center', 'justify-center', 'p-6', 'border-b', 'border-gray-100', 'group', 'transition-colors', 'duration-300');
+            if (value === 'bg-checkered') {
+                el.className = `card-preview bg-checkered`;
+                el.style.backgroundColor = '';
+            } else {
+                el.className = `card-preview`;
+                el.style.backgroundColor = value;
+            }
         }
 
-        // Robust Copy (Fallback for all browsers)
         async function copyUrl(text, btn) {
-            const originalText = btn.innerText; const originalClass = btn.className;
+            const originalText = btn.innerText; 
+            const originalBg = btn.style.backgroundColor;
+            const originalColor = btn.style.color;
+            const originalBorder = btn.style.borderColor;
+            
             const success = () => {
                 btn.innerText = "Copied!";
-                btn.className = "flex-1 py-1.5 bg-green-600 text-white border border-green-600 text-xs font-medium rounded transition";
-                setTimeout(() => { btn.innerText = originalText; btn.className = originalClass; }, 2000);
+                btn.style.backgroundColor = "var(--green-600)";
+                btn.style.color = "white";
+                btn.style.borderColor = "var(--green-600)";
+                setTimeout(() => { 
+                    btn.innerText = originalText; 
+                    btn.style.backgroundColor = originalBg;
+                    btn.style.color = originalColor;
+                    btn.style.borderColor = originalBorder;
+                }, 2000);
             };
 
-            // Method 1: Clipboard API
             if (navigator.clipboard && window.isSecureContext) {
-                try { await navigator.clipboard.writeText(text); success(); return; } catch (e) { console.warn("Clipboard API failed, trying fallback"); }
+                try { await navigator.clipboard.writeText(text); success(); return; } catch (e) {}
             }
-
-            // Method 2: Hidden Textarea
             try {
                 const ta = document.createElement("textarea"); ta.value = text;
                 ta.style.position = "fixed"; ta.style.left = "-9999px";
@@ -259,35 +372,30 @@
             } catch (e) { prompt("Copy link manually:", text); }
         }
 
-        function copyText(hex) { copyUrl(hex, { innerText: '', className: '' }); alert(`Color ${hex} copied to clipboard.`); }
+        function copyText(hex) { copyUrl(hex, { innerText: '', style: {} }); alert(`Color ${hex} copied to clipboard.`); }
 
-        // --- DIAGNOSTICS ---
         function handleImageError(img, fileName) {
             errorCount++;
-            img.style.display = 'none';
-            const parent = img.parentElement;
-            
-            // Create "Missing Asset" Placeholder
-            const errDiv = document.createElement('div'); 
-            errDiv.className = "img-error";
-            errDiv.innerHTML = `<div class="text-red-400 text-2xl mb-1">⚠️</div><div class="font-mono">Asset Missing</div><div class="text-[10px] mt-1">${fileName}</div>`;
-            parent.appendChild(errDiv); 
-            
+            const wrapper = img.parentElement;
+            wrapper.innerHTML = `<div class="img-error"><div style="color: var(--red-400); font-size: 1.5rem; margin-bottom: 0.25rem;">⚠️</div><div style="font-family: monospace;">Asset Missing</div><div style="font-size: 0.625rem; margin-top: 0.25rem;">${fileName}</div></div>`;
             updateStatus();
         }
 
         function updateStatus() {
             const statusEl = document.getElementById('system-status');
             if (errorCount === 0) {
-                statusEl.innerHTML = `<span class="status-dot bg-green-500"></span> All Systems Operational`;
-                statusEl.className = "flex items-center gap-2 text-green-600 font-medium";
+                statusEl.innerHTML = `<span class="status-dot" style="background-color: var(--green-500);"></span> <span style="color: var(--green-600); font-weight: 500;">All Systems Operational</span>`;
             } else {
-                statusEl.innerHTML = `<span class="status-dot bg-red-500"></span> ${errorCount} Asset(s) Missing in Repo`;
-                statusEl.className = "flex items-center gap-2 text-red-600 font-bold animate-pulse";
+                statusEl.innerHTML = `<span class="status-dot" style="background-color: var(--red-500); animation: pulse 2s infinite;"></span> <span style="color: var(--red-600); font-weight: 700;">${errorCount} Asset(s) Missing in Repo</span>`;
+                if (!document.getElementById('pulse-style')) {
+                    const style = document.createElement('style');
+                    style.id = 'pulse-style';
+                    style.innerHTML = `@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }`;
+                    document.head.appendChild(style);
+                }
             }
         }
 
-        // Start App
         init();
     </script>
 </body>
