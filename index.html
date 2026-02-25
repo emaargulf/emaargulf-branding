@@ -1,402 +1,451 @@
-<!-- 
-    Project: Emaar Gulf Brand Portal
-    Version: 3.2 (Pure CSS / Pixel-Perfect / Header Logo Fixed)
-    Developer: Mohammed Safdar (archengsafdar@gmail.com)
-    Path: /index.html (Root)
--->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="author" content="archengsafdar@gmail.com">
     <meta name="description" content="Official Brand Assets and Guidelines for Emaar Gulf Engineering Consultants.">
-    
-    <!-- OG Image points to assets folder (Smart Fallback) -->
-    <meta property="og:image" content="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-full-dark.png">
+    <meta name="theme-color" content="#f1aa27">
     
     <title>Emaar Gulf | Brand Assets Portal</title>
     
-    <!-- Google Fonts ONLY -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- Favicon -->
-    <link id="favicon" rel="icon" type="image/png" href="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-icon-dark.png">
+    <link id="favicon" rel="icon" type="image/png" href="">
     
     <style>
-        /* CSS Variables (Exact Tailwind Color Palette) */
+        /* --- CORE VARIABLES --- */
         :root {
             --primary: #f1aa27; 
+            --primary-hover: #d4921b;
             --dark: #333333;
-            --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb;
-            --gray-300: #d1d5db; --gray-400: #9ca3af; --gray-500: #6b7280;
-            --gray-600: #4b5563; --gray-700: #374151; --gray-800: #1f2937;
-            --gray-900: #111827;
-            --red-100: #fee2e2; --red-400: #f87171; --red-500: #ef4444; --red-600: #dc2626;
-            --green-500: #22c55e; --green-600: #16a34a;
-            --orange-50: #fff7ed; --orange-100: #ffedd5; --orange-600: #ea580c; --orange-700: #c2410c;
+            --bg-body: #f9fafb;
+            --surface: #ffffff;
+            --border: #e5e7eb;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --success: #10b981;
+            --danger: #ef4444;
+            --radius: 0.75rem;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* 1. Base Reset (Tailwind Preflight Emulation) */
-        *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: var(--gray-200); }
-        html { line-height: 1.5; -webkit-text-size-adjust: 100%; font-family: 'Inter', sans-serif; }
-        body { margin: 0; background-color: var(--gray-50); color: var(--gray-800); display: flex; flex-direction: column; min-height: 100vh; }
-        a { color: inherit; text-decoration: inherit; }
-        button, a { cursor: pointer; }
-        button { background-color: transparent; background-image: none; padding: 0; margin: 0; font-family: inherit; font-size: inherit; line-height: inherit; text-transform: none; appearance: button; }
-        h1, h2, h3, h4, p { margin: 0; }
+        /* --- RESET & BASE --- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-body); color: var(--text-main); line-height: 1.5; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; min-height: 100vh; }
+        h1, h2, h3, .font-brand { font-family: 'Cairo', sans-serif; }
         img { display: block; max-width: 100%; height: auto; }
+        button { cursor: pointer; border: none; background: none; font: inherit; }
+        a { text-decoration: none; color: inherit; }
 
-        /* Typography */
-        .font-cairo { font-family: 'Cairo', sans-serif; }
-        .text-xs { font-size: 0.75rem; line-height: 1rem; }
-        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-        .text-[10px] { font-size: 0.625rem; line-height: 1rem; }
-
-        /* Utilities */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        /* --- UTILITIES --- */
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; opacity: 0; transform: translateY(10px); }
+        @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
         
         .bg-checkered {
             background-color: #ffffff;
-            background-image: linear-gradient(45deg, #f0f0f0 25%, transparent 25%), 
-                              linear-gradient(-45deg, #f0f0f0 25%, transparent 25%), 
-                              linear-gradient(45deg, transparent 75%, #f0f0f0 75%), 
-                              linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-image: 
+                linear-gradient(45deg, #f3f4f6 25%, transparent 25%), 
+                linear-gradient(-45deg, #f3f4f6 25%, transparent 25%), 
+                linear-gradient(45deg, transparent 75%, #f3f4f6 75%), 
+                linear-gradient(-45deg, transparent 75%, #f3f4f6 75%);
             background-size: 20px 20px;
             background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
         }
 
-        /* Header */
-        .header { background-color: #fff; border-bottom: 1px solid var(--gray-200); position: sticky; top: 0; z-index: 50; }
-        .container { max-width: 80rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; width: 100%; }
-        @media (min-width: 640px) { .container { padding-left: 1.5rem; padding-right: 1.5rem; } }
-        @media (min-width: 1024px) { .container { padding-left: 2rem; padding-right: 2rem; } }
-        
-        .header-content { height: 5rem; display: flex; align-items: center; justify-content: space-between; }
-        .header-left { display: flex; align-items: center; gap: 1rem; }
-        .header-logo { height: 2.5rem; width: auto; transition: opacity 300ms ease-in-out; }
-        .header-title { font-family: 'Cairo', sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--gray-900); line-height: 1; }
-        .header-subtitle { font-size: 0.75rem; color: var(--gray-500); margin-top: 0.25rem; }
-        
-        .contact-link { font-size: 0.875rem; font-weight: 500; color: var(--gray-500); display: flex; align-items: center; gap: 0.5rem; transition: color 150ms; }
-        .contact-link:hover { color: var(--primary); }
-        .contact-link svg { height: 1rem; width: 1rem; }
+        /* --- HEADER --- */
+        header { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); background-color: rgba(255,255,255,0.95); }
+        .header-inner { height: 80px; display: flex; align-items: center; justify-content: space-between; }
+        .brand-block { display: flex; align-items: center; gap: 1rem; }
+        .brand-logo { height: 40px; width: auto; transition: var(--transition); }
+        .brand-text h1 { font-size: 1.25rem; font-weight: 700; color: var(--dark); line-height: 1.1; }
+        .brand-text p { font-size: 0.75rem; color: var(--text-muted); }
 
-        /* Main Content */
-        .main-content { padding-top: 2.5rem; padding-bottom: 2.5rem; flex-grow: 1; }
-        .section-wrapper { margin-bottom: 3rem; }
-        .section-title { font-family: 'Cairo', sans-serif; font-size: 1.5rem; line-height: 2rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
-        .color-pill { width: 0.5rem; height: 2rem; border-radius: 9999px; }
+        .search-bar {
+            display: none; /* Hidden on mobile initially */
+            background: var(--bg-body); border: 1px solid var(--border);
+            padding: 0.5rem 1rem; border-radius: 99px;
+            font-size: 0.875rem; width: 250px;
+            transition: var(--transition);
+        }
+        .search-bar:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(241, 170, 39, 0.2); }
+        @media(min-width: 768px) { .search-bar { display: block; } }
 
-        /* Grid System */
-        .grid-cards { display: grid; grid-template-columns: repeat(1, minmax(0, 1fr)); gap: 1.5rem; }
-        @media (min-width: 768px) { .grid-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-        @media (min-width: 1024px) { .grid-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        /* --- MAIN CONTENT --- */
+        main { flex: 1; padding: 3rem 0; }
+        .section { margin-bottom: 4rem; }
+        .section-header { margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+        .section-pill { width: 6px; height: 32px; border-radius: 4px; }
+        .section-title { font-size: 1.5rem; font-weight: 700; color: var(--dark); }
 
-        /* Card Design */
-        .card { background-color: #fff; border-radius: 0.75rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); border: 1px solid var(--gray-200); overflow: hidden; display: flex; flex-direction: column; height: 100%; }
-        .card-preview { position: relative; height: 12rem; display: flex; align-items: center; justify-content: center; padding: 1.5rem; border-bottom: 1px solid var(--gray-100); transition: background-color 300ms, color 300ms; }
+        /* --- CARD GRID --- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
         
-        /* The specific scale group hover from Tailwind */
-        .card-img-wrapper { display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; }
-        .card-img { max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1); }
-        .card:hover .card-img { transform: scale(1.05); }
-        
-        .card-actions { position: absolute; top: 0.75rem; right: 0.75rem; display: flex; gap: 0.25rem; opacity: 0; transition: opacity 300ms; background-color: rgba(255, 255, 255, 0.9); padding: 0.25rem; border-radius: 0.5rem; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); backdrop-filter: blur(4px); }
-        .card:hover .card-actions { opacity: 1; }
-        
-        .btn-bg { width: 1.5rem; height: 1.5rem; border-radius: 0.25rem; border: 1px solid var(--gray-300); }
-        .btn-bg:hover { border-color: var(--gray-400); }
-        
-        .card-body { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
-        .item-title { font-weight: 700; color: var(--gray-900); font-size: 0.875rem; margin-bottom: 0.25rem; }
-        .item-desc { font-size: 0.75rem; color: var(--gray-500); margin-bottom: 1rem; flex-grow: 1; }
-        
-        .download-row { display: flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; }
-        .format-label { font-size: 0.625rem; font-weight: 700; width: 2rem; text-transform: uppercase; }
-        .lbl-png { color: var(--gray-400); }
-        .lbl-svg { color: var(--orange-500); }
-        
-        .btn-link { flex: 1; padding-top: 0.375rem; padding-bottom: 0.375rem; font-size: 0.75rem; line-height: 1rem; font-weight: 500; border-radius: 0.25rem; border: 1px solid; transition: all 150ms; text-align: center; }
-        .btn-dl { padding: 0.375rem 0.75rem; border-radius: 0.25rem; border: 1px solid; transition: all 150ms; }
-        
-        /* Specific format button colors */
-        .row-png .btn-link, .row-png .btn-dl { background-color: var(--gray-50); border-color: var(--gray-200); color: var(--gray-700); }
-        .row-png .btn-link:hover, .row-png .btn-dl:hover { background-color: var(--gray-100); }
-        
-        .row-svg .btn-link, .row-svg .btn-dl { background-color: var(--orange-50); border-color: var(--orange-100); color: var(--orange-700); }
-        .row-svg .btn-link:hover, .row-svg .btn-dl:hover { background-color: var(--orange-100); }
+        .card { 
+            background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); 
+            overflow: hidden; display: flex; flex-direction: column; 
+            transition: var(--transition);
+        }
+        .card:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--primary); }
 
-        /* Colors Grid */
-        .grid-colors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
-        @media (min-width: 768px) { .grid-colors { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
-        
-        .color-card { background-color: #fff; padding: 0.75rem; border-radius: 0.5rem; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); border: 1px solid var(--gray-200); display: flex; align-items: center; gap: 0.75rem; cursor: pointer; transition: all 150ms; }
-        .color-card:hover { border-color: var(--primary); }
-        .color-swatch { width: 3rem; height: 3rem; border-radius: 0.5rem; box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05); border: 1px solid var(--gray-100); }
-        .color-name { font-weight: 700; font-size: 0.875rem; color: var(--gray-900); }
-        .color-hex { font-size: 0.75rem; font-family: monospace; color: var(--gray-500); transition: color 150ms; }
-        .color-card:hover .color-hex { color: var(--primary); }
+        .preview-area { 
+            height: 200px; position: relative; border-bottom: 1px solid var(--border); 
+            display: flex; align-items: center; justify-content: center; padding: 2rem;
+        }
+        .preview-img { max-height: 100%; max-width: 100%; object-fit: contain; transition: transform 0.3s ease; }
+        .card:hover .preview-img { transform: scale(1.05); }
 
-        /* Footer */
-        .footer { border-top: 1px solid var(--gray-200); padding-top: 2rem; padding-bottom: 2rem; margin-top: auto; text-align: center; }
-        .footer-copy { color: var(--gray-500); font-size: 0.875rem; }
-        .footer-status-row { margin-top: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.75rem; color: var(--gray-400); }
-        .status-dot { height: 0.5rem; width: 0.5rem; border-radius: 9999px; display: inline-block; }
-        .footer-dev { font-size: 0.625rem; color: var(--gray-400); margin-top: 1rem; opacity: 0.6; transition: opacity 150ms; }
-        .footer-dev:hover { opacity: 1; }
-        .footer-dev a { color: var(--gray-500); font-weight: 700; transition: color 150ms; }
-        .footer-dev a:hover { color: var(--primary); }
+        /* Controls overlay */
+        .controls { 
+            position: absolute; top: 10px; right: 10px; display: flex; gap: 4px; 
+            background: rgba(255,255,255,0.9); padding: 4px; border-radius: 6px; 
+            opacity: 0; transition: var(--transition); border: 1px solid var(--border);
+        }
+        .card:hover .controls { opacity: 1; }
+        .ctrl-btn { width: 24px; height: 24px; border-radius: 4px; border: 1px solid var(--border); }
+        .ctrl-btn:hover { border-color: var(--text-muted); }
 
-        .img-error { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; width: 100%; color: var(--gray-400); font-size: 0.75rem; text-align: center; padding: 1rem; border: 2px dashed var(--gray-200); border-radius: 0.5rem; }
+        .card-body { padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; flex: 1; }
+        .asset-name { font-weight: 600; color: var(--text-main); font-size: 0.95rem; }
+        .asset-desc { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; flex: 1; }
+
+        .action-row { display: flex; align-items: center; gap: 0.5rem; }
+        .badge { font-size: 0.65rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; width: 40px; text-align: center; }
+        .badge-png { background: var(--bg-body); color: var(--text-muted); border: 1px solid var(--border); }
+        .badge-svg { background: #fff7ed; color: #c2410c; border: 1px solid #ffedd5; }
+
+        .btn { 
+            flex: 1; padding: 0.4rem; font-size: 0.75rem; font-weight: 600; 
+            border-radius: 6px; border: 1px solid var(--border); 
+            background: var(--surface); color: var(--text-main); 
+            transition: var(--transition); text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px;
+        }
+        .btn:hover { background: var(--bg-body); border-color: var(--text-muted); }
+        .btn-icon { width: 28px; padding: 0; }
+
+        /* --- COLORS GRID --- */
+        .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; }
+        .color-card { 
+            background: var(--surface); border: 1px solid var(--border); padding: 0.75rem; 
+            border-radius: var(--radius); display: flex; align-items: center; gap: 1rem;
+            cursor: pointer; transition: var(--transition);
+        }
+        .color-card:hover { border-color: var(--primary); transform: translateX(4px); }
+        .swatch { width: 48px; height: 48px; border-radius: 8px; border: 1px solid rgba(0,0,0,0.1); }
+        .color-info h4 { font-size: 0.9rem; font-weight: 600; }
+        .color-info code { font-size: 0.75rem; color: var(--text-muted); font-family: monospace; }
+
+        /* --- FOOTER --- */
+        footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; font-size: 0.875rem; color: var(--text-muted); background: var(--surface); }
+        .status-badge { 
+            display: inline-flex; align-items: center; gap: 6px; 
+            padding: 4px 12px; border-radius: 99px; background: var(--bg-body); 
+            border: 1px solid var(--border); font-size: 0.75rem; margin-top: 1rem;
+        }
+        .dot { width: 8px; height: 8px; border-radius: 50%; }
+        .dot.ok { background: var(--success); box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2); }
+        .dot.err { background: var(--danger); animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        /* --- ERROR STATE --- */
+        .error-placeholder { 
+            width: 100%; height: 100%; display: flex; flex-direction: column; 
+            align-items: center; justify-content: center; text-align: center;
+            color: var(--danger); background: #fef2f2; padding: 1rem;
+        }
     </style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container header-content">
-            <div class="header-left">
-                <!-- FIXED LOGO LOGIC: Start invisible, fade in on successful load -->
-                <img id="header-logo" class="header-logo" style="opacity: 0;" alt="Emaar Gulf Logo" onload="this.style.opacity='1'" onerror="this.style.display='none'">
-                <div>
-                    <h1 class="header-title">Brand Assets</h1>
-                    <p class="header-subtitle">Emaar Gulf Engineering Consultants</p>
+    <header>
+        <div class="container header-inner">
+            <div class="brand-block">
+                <img id="header-logo" class="brand-logo" alt="Emaar Gulf" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                <div class="brand-text">
+                    <h1>Brand Assets</h1>
+                    <p>Emaar Gulf Engineering Consultants</p>
                 </div>
             </div>
-            <a href="mailto:emaargulf.sa@gmail.com" class="contact-link">
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                Contact Admin
-            </a>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Search assets..." onkeyup="filterAssets()">
+                <a href="mailto:emaargulf.sa@gmail.com" class="btn">
+                    Contact Admin
+                </a>
+            </div>
         </div>
     </header>
 
-    <!-- CONTENT -->
-    <main id="app" class="container main-content"></main>
+    <main id="app" class="container">
+        </main>
 
-    <!-- FOOTER -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <p class="footer-copy">&copy; <span id="year"></span> Emaar Gulf Engineering Consultants.</p>
+            <p>&copy; <span id="year"></span> Emaar Gulf Engineering Consultants.</p>
             
-            <!-- Diagnostics & Attribution -->
-            <div class="footer-status-row">
-                <span>Hosted on GitHub Pages</span>
-                <span style="color: var(--gray-300)">|</span>
-                <span id="system-status" style="display: flex; align-items: center; gap: 0.25rem; font-family: monospace;">Initializing...</span>
+            <div class="status-badge" id="system-status">
+                <span class="dot ok"></span> System Operational
             </div>
-            <p class="footer-dev">
-                Engineered by <a href="mailto:archengsafdar@gmail.com">archengsafdar@gmail.com</a>
+            
+            <p style="margin-top: 1rem; font-size: 0.75rem; opacity: 0.7;">
+                Engineered by <a href="mailto:archengsafdar@gmail.com" style="font-weight: 600; color: var(--primary);">archengsafdar@gmail.com</a>
             </p>
         </div>
     </footer>
 
-    <!-- LOGIC -->
     <script>
-        // --- CONFIGURATION ---
+        /**
+         * INTELLIGENT ASSET MANAGER V4.1
+         * Feature: CLOUD-FIRST (Always pulls from GitHub Production)
+         */
+
         const CONFIG = {
-            repoBase: "https://emaargulf.github.io/emaargulf-branding/",
-            assetsPath: "assets/logos/", 
+            // FIXED: We force the online URL. 
+            // This ensures images load even if you open this file from your Desktop.
+            repoBase: "https://emaargulf.github.io/emaargulf-branding/", 
+            
+            assetsPath: "assets/logos/",
             
             sections: [
                 {
                     title: "Corporate Logos",
-                    color: "background-color: var(--primary);",
+                    color: "var(--primary)",
+                    id: "sec-logos",
                     items: [
-                        { id: "full-dark", name: "Primary Logo (Dark)", file: "logo-full-dark", desc: "For white/light backgrounds. (Letterheads)", defaultBg: "bg-checkered" },
-                        { id: "full-light", name: "Secondary Logo (Light)", file: "logo-full-light", desc: "For dark backgrounds/overlays.", defaultBg: "background-color: var(--gray-900);" }
+                        { id: "full-dark", name: "Primary Logo (Dark)", file: "logo-full-dark", desc: "Standard logo for white backgrounds.", bg: "bg-checkered" },
+                        { id: "full-light", name: "Secondary Logo (Light)", file: "logo-full-light", desc: "For dark overlays or black backgrounds.", bg: "#1f2937" }
                     ]
                 },
                 {
                     title: "Symbols & Icons",
-                    color: "background-color: var(--gray-800);",
+                    color: "#1f2937",
+                    id: "sec-icons",
                     items: [
-                        { id: "icon-dark", name: "Icon Symbol (Dark)", file: "logo-icon-dark", desc: "Square icon for light contexts.", defaultBg: "bg-checkered" },
-                        { id: "icon-light", name: "Icon Symbol (Light)", file: "logo-icon-light", desc: "Square icon for dark contexts.", defaultBg: "background-color: var(--gray-900);" }
+                        { id: "icon-dark", name: "Icon Symbol (Dark)", file: "logo-icon-dark", desc: "Square avatar/favicon for light mode.", bg: "bg-checkered" },
+                        { id: "icon-light", name: "Icon Symbol (Light)", file: "logo-icon-light", desc: "Square avatar/favicon for dark mode.", bg: "#1f2937" }
                     ]
                 },
                 {
                     title: "Graphic Elements",
-                    color: "background-color: var(--gray-600);",
+                    color: "#4b5563",
+                    id: "sec-graphics",
                     items: [
-                        { id: "part-g", name: "Graphic Element (G)", file: "logo-part-g", desc: "Branding accent element.", defaultBg: "bg-checkered" }
+                        { id: "part-g", name: "Graphic Element (G)", file: "logo-part-g", desc: "Abstract branding accent.", bg: "bg-checkered" }
                     ]
                 }
             ],
             colors: [
                 { name: "Charcoal", hex: "#333333" },
                 { name: "Emaar Gold", hex: "#f1aa27" },
-                { name: "Off-White", hex: "#f4f4f4" }
+                { name: "Off-White", hex: "#f4f4f4" },
+                { name: "Pure White", hex: "#ffffff" }
             ]
         };
 
-        const app = document.getElementById('app');
+        // Global Error Counter
         let errorCount = 0;
 
         function init() {
-            // Dynamic Header Logo Binding
-            const headerIcon = getAssetUrl('logo-icon-dark.png');
-            document.getElementById('header-logo').src = headerIcon;
-            
+            const app = document.getElementById('app');
             document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // Set Header Logo & Favicon Dynamically
+            const iconUrl = getUrl('logo-icon-dark.png');
+            document.getElementById('header-logo').src = iconUrl;
+            document.getElementById('favicon').href = iconUrl;
 
-            CONFIG.sections.forEach(section => {
-                const sectionHtml = `
-                    <div class="section-wrapper fade-in">
-                        <h2 class="section-title">
-                            <span class="color-pill" style="${section.color}"></span>
-                            ${section.title}
-                        </h2>
-                        <div class="grid-cards">
+            // Render Sections
+            CONFIG.sections.forEach((section, index) => {
+                const delay = index * 100; // Stagger animation
+                const html = `
+                    <div class="section fade-in" style="animation-delay: ${delay}ms" id="${section.id}">
+                        <div class="section-header">
+                            <div class="section-pill" style="background: ${section.color}"></div>
+                            <h2 class="section-title">${section.title}</h2>
+                        </div>
+                        <div class="grid">
                             ${section.items.map(item => renderCard(item)).join('')}
                         </div>
                     </div>
                 `;
-                app.innerHTML += sectionHtml;
+                app.innerHTML += html;
             });
 
-            renderColors();
-            setTimeout(updateStatus, 1000);
+            // Render Colors
+            renderColors(app);
         }
 
         function renderCard(item) {
-            const pngUrl = getAssetUrl(item.file + '.png');
-            const svgUrl = getAssetUrl(item.file + '.svg');
-            const uniqueId = `preview-${item.id}`;
-            const isCheckered = item.defaultBg === "bg-checkered";
-            const inlineStyle = isCheckered ? "" : `style="${item.defaultBg}"`;
-            const bgClass = isCheckered ? "bg-checkered" : "";
+            const pngUrl = getUrl(item.file + '.png');
+            const svgUrl = getUrl(item.file + '.svg');
+            const uid = `card-${item.id}`;
+            const bgStyle = item.bg.startsWith('#') ? `background-color: ${item.bg}` : '';
+            const bgClass = item.bg.startsWith('#') ? '' : item.bg;
 
             return `
-                <div class="card">
-                    <div id="${uniqueId}" class="card-preview ${bgClass}" ${inlineStyle}>
-                        <div class="card-img-wrapper">
-                            <img src="${pngUrl}" class="card-img" alt="${item.name}" onerror="handleImageError(this, '${item.file}')">
-                        </div>
+                <div class="card search-item" data-name="${item.name.toLowerCase()}">
+                    <div id="${uid}" class="preview-area ${bgClass}" style="${bgStyle}">
+                        <img src="${pngUrl}" class="preview-img" alt="${item.name}" 
+                             onerror="handleError(this, '${item.file}')">
                         
-                        <div class="card-actions">
-                            <button onclick="changeBg('${uniqueId}', 'bg-checkered')" class="btn-bg bg-checkered" title="Transparent"></button>
-                            <button onclick="changeBg('${uniqueId}', 'white')" class="btn-bg" style="background-color: white;" title="White"></button>
-                            <button onclick="changeBg('${uniqueId}', 'var(--gray-900)')" class="btn-bg" style="background-color: var(--gray-900); border-color: var(--gray-600);" title="Dark"></button>
+                        <div class="controls">
+                            <button class="ctrl-btn bg-checkered" onclick="setBg('${uid}', 'bg-checkered')" title="Transparent"></button>
+                            <button class="ctrl-btn" style="background:#fff" onclick="setBg('${uid}', 'white')" title="White"></button>
+                            <button class="ctrl-btn" style="background:#1f2937" onclick="setBg('${uid}', '#1f2937')" title="Dark"></button>
                         </div>
                     </div>
                     
                     <div class="card-body">
-                        <h3 class="item-title">${item.name}</h3>
-                        <p class="item-desc">${item.desc}</p>
+                        <div>
+                            <h3 class="asset-name">${item.name}</h3>
+                            <p class="asset-desc">${item.desc}</p>
+                        </div>
                         
-                        <div style="margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <div class="download-row row-png">
-                                <span class="format-label lbl-png">PNG</span>
-                                <button onclick="copyUrl('${pngUrl}', this)" class="btn-link">Copy URL</button>
-                                <a href="${pngUrl}" download target="_blank" class="btn-dl">↓</a>
-                            </div>
-                            <div class="download-row row-svg">
-                                <span class="format-label lbl-svg">SVG</span>
-                                <button onclick="copyUrl('${svgUrl}', this)" class="btn-link">Copy URL</button>
-                                <a href="${svgUrl}" download target="_blank" class="btn-dl">↓</a>
-                            </div>
+                        <div class="action-row">
+                            <span class="badge badge-png">PNG</span>
+                            <button onclick="copyToClipboard('${pngUrl}', this)" class="btn">Copy URL</button>
+                            <a href="${pngUrl}" download target="_blank" class="btn btn-icon">↓</a>
+                        </div>
+                        <div class="action-row">
+                            <span class="badge badge-svg">SVG</span>
+                            <button onclick="copyToClipboard('${svgUrl}', this)" class="btn">Copy URL</button>
+                            <a href="${svgUrl}" download target="_blank" class="btn btn-icon">↓</a>
                         </div>
                     </div>
                 </div>
             `;
         }
 
-        function renderColors() {
-            const colorsHtml = `
-                <div class="section-wrapper fade-in">
-                    <h2 class="section-title">
-                        <span class="color-pill" style="background-color: var(--gray-800);"></span>
-                        Brand Colors
-                    </h2>
-                    <div class="grid-colors">
-                        ${CONFIG.colors.map(color => `
-                            <div class="color-card group" onclick="copyText('${color.hex}')">
-                                <div class="color-swatch" style="background-color: ${color.hex};"></div>
-                                <div>
-                                    <p class="color-name">${color.name}</p>
-                                    <p class="color-hex">${color.hex}</p>
+        function renderColors(container) {
+            const html = `
+                <div class="section fade-in">
+                    <div class="section-header">
+                        <div class="section-pill" style="background: var(--dark)"></div>
+                        <h2 class="section-title">Brand Colors</h2>
+                    </div>
+                    <div class="color-grid">
+                        ${CONFIG.colors.map(c => `
+                            <div class="color-card" onclick="copyToClipboard('${c.hex}', this, true)">
+                                <div class="swatch" style="background: ${c.hex}"></div>
+                                <div class="color-info">
+                                    <h4>${c.name}</h4>
+                                    <code>${c.hex}</code>
                                 </div>
                             </div>
                         `).join('')}
                     </div>
                 </div>
             `;
-            app.innerHTML += colorsHtml;
+            container.innerHTML += html;
         }
 
-        function getAssetUrl(filename) { return CONFIG.repoBase + CONFIG.assetsPath + filename; }
+        // --- INTELLIGENCE FUNCTIONS ---
 
-        function changeBg(id, value) {
+        // Cloud-First URL Builder
+        function getUrl(filename) {
+            return `${CONFIG.repoBase}${CONFIG.assetsPath}${filename}`; 
+        }
+
+        // Background Toggle Logic
+        function setBg(id, value) {
             const el = document.getElementById(id);
+            el.className = 'preview-area'; // Reset
+            el.style.backgroundColor = '';
+            
             if (value === 'bg-checkered') {
-                el.className = `card-preview bg-checkered`;
-                el.style.backgroundColor = '';
+                el.classList.add('bg-checkered');
+            } else if (value === 'white') {
+                el.style.backgroundColor = '#ffffff';
             } else {
-                el.className = `card-preview`;
                 el.style.backgroundColor = value;
             }
         }
 
-        async function copyUrl(text, btn) {
-            const originalText = btn.innerText; 
-            const originalBg = btn.style.backgroundColor;
-            const originalColor = btn.style.color;
-            const originalBorder = btn.style.borderColor;
+        // Search Filter
+        function filterAssets() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.search-item');
             
-            const success = () => {
-                btn.innerText = "Copied!";
-                btn.style.backgroundColor = "var(--green-600)";
-                btn.style.color = "white";
-                btn.style.borderColor = "var(--green-600)";
-                setTimeout(() => { 
-                    btn.innerText = originalText; 
-                    btn.style.backgroundColor = originalBg;
-                    btn.style.color = originalColor;
-                    btn.style.borderColor = originalBorder;
-                }, 2000);
-            };
-
-            if (navigator.clipboard && window.isSecureContext) {
-                try { await navigator.clipboard.writeText(text); success(); return; } catch (e) {}
-            }
-            try {
-                const ta = document.createElement("textarea"); ta.value = text;
-                ta.style.position = "fixed"; ta.style.left = "-9999px";
-                document.body.appendChild(ta); ta.focus(); ta.select();
-                document.execCommand('copy'); document.body.removeChild(ta);
-                success();
-            } catch (e) { prompt("Copy link manually:", text); }
-        }
-
-        function copyText(hex) { copyUrl(hex, { innerText: '', style: {} }); alert(`Color ${hex} copied to clipboard.`); }
-
-        function handleImageError(img, fileName) {
-            errorCount++;
-            const wrapper = img.parentElement;
-            wrapper.innerHTML = `<div class="img-error"><div style="color: var(--red-400); font-size: 1.5rem; margin-bottom: 0.25rem;">⚠️</div><div style="font-family: monospace;">Asset Missing</div><div style="font-size: 0.625rem; margin-top: 0.25rem;">${fileName}</div></div>`;
-            updateStatus();
-        }
-
-        function updateStatus() {
-            const statusEl = document.getElementById('system-status');
-            if (errorCount === 0) {
-                statusEl.innerHTML = `<span class="status-dot" style="background-color: var(--green-500);"></span> <span style="color: var(--green-600); font-weight: 500;">All Systems Operational</span>`;
-            } else {
-                statusEl.innerHTML = `<span class="status-dot" style="background-color: var(--red-500); animation: pulse 2s infinite;"></span> <span style="color: var(--red-600); font-weight: 700;">${errorCount} Asset(s) Missing in Repo</span>`;
-                if (!document.getElementById('pulse-style')) {
-                    const style = document.createElement('style');
-                    style.id = 'pulse-style';
-                    style.innerHTML = `@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .5; } }`;
-                    document.head.appendChild(style);
+            items.forEach(item => {
+                const name = item.getAttribute('data-name');
+                if (name.includes(term)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
                 }
+            });
+        }
+
+        // Self-Healing Error Handler
+        function handleError(img, filename) {
+            errorCount++;
+            const parent = img.parentElement;
+            
+            parent.innerHTML = `
+                <div class="error-placeholder">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem">⚠️</div>
+                    <div style="font-weight: 700; font-size: 0.8rem;">Asset Missing</div>
+                    <code style="font-size: 0.6rem; margin-top: 0.25rem; color: var(--text-muted)">${filename}</code>
+                </div>
+            `;
+            
+            updateSystemStatus();
+        }
+
+        function updateSystemStatus() {
+            const badge = document.getElementById('system-status');
+            const dot = badge.querySelector('.dot');
+            
+            if (errorCount > 0) {
+                dot.className = 'dot err';
+                badge.innerHTML = `<span class="dot err"></span> ${errorCount} Missing Asset(s)`;
+                badge.style.color = 'var(--danger)';
+                badge.style.borderColor = 'var(--danger)';
             }
         }
 
+        // Advanced Clipboard Copy
+        async function copyToClipboard(text, btn, isColor = false) {
+            const originalContent = btn.innerHTML;
+            
+            try {
+                await navigator.clipboard.writeText(text);
+                
+                // Success Feedback
+                if (isColor) {
+                    const card = btn; 
+                    card.style.borderColor = 'var(--success)';
+                    setTimeout(() => card.style.borderColor = '', 1000);
+                } else {
+                    btn.innerHTML = `<span style="color:var(--success)">✔ Copied</span>`;
+                    btn.style.borderColor = 'var(--success)';
+                }
+            } catch (err) {
+                // Fallback for older browsers
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                btn.innerText = "Copied!";
+            }
+
+            // Reset
+            if (!isColor) {
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.style.borderColor = '';
+                }, 2000);
+            }
+        }
+
+        // Initialize
         init();
+
     </script>
 </body>
 </html>
