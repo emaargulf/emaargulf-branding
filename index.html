@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Developer/Author: archengsafdar@gmail.com -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -17,11 +18,12 @@
     
     <style>
         /* --- CORE VARIABLES --- */
+        /* Developer/Author: archengsafdar@gmail.com */
         :root {
             --primary: #f1aa27; 
             --primary-hover: #d4921b;
-            --dark: #333333;
-            --bg-body: #f9fafb;
+            --dark: #35383C;
+            --bg-body: #f9f9f9;
             --surface: #ffffff;
             --border: #e5e7eb;
             --text-main: #1f2937;
@@ -66,7 +68,7 @@
         .brand-text p { font-size: 0.75rem; color: var(--text-muted); }
 
         .search-bar {
-            display: none; /* Hidden on mobile initially */
+            display: none; 
             background: var(--bg-body); border: 1px solid var(--border);
             padding: 0.5rem 1rem; border-radius: 99px;
             font-size: 0.875rem; width: 250px;
@@ -198,50 +200,83 @@
 
     <script>
         /**
-         * INTELLIGENT ASSET MANAGER V4.1
+         * INTELLIGENT ASSET MANAGER V4.2
          * Feature: CLOUD-FIRST (Always pulls from GitHub Production)
+         * Developer/Author: archengsafdar@gmail.com
          */
 
         const CONFIG = {
-            // FIXED: We force the online URL. 
-            // This ensures images load even if you open this file from your Desktop.
             repoBase: "https://emaargulf.github.io/emaargulf-branding/", 
-            
             assetsPath: "assets/logos/",
             
             sections: [
                 {
-                    title: "Corporate Logos",
+                    title: "Extended Legal Logos",
                     color: "var(--primary)",
-                    id: "sec-logos",
+                    id: "sec-extended",
                     items: [
-                        { id: "full-dark", name: "Primary Logo (Dark)", file: "logo-full-dark", desc: "Standard logo for white backgrounds.", bg: "bg-checkered" },
-                        { id: "full-light", name: "Secondary Logo (Light)", file: "logo-full-light", desc: "For dark overlays or black backgrounds.", bg: "#1f2937" }
+                        { id: "ext-dark", name: "Extended Legal (Dark)", file: "logo-extended-dark", desc: "Long-form legal name with 'G' symbol. For wide headers and official documents.", bg: "bg-checkered" },
+                        { id: "ext-light", name: "Extended Legal (Light)", file: "logo-extended-light", desc: "Long-form legal name with 'G' symbol. For dark overlays and contracts.", bg: "var(--dark)" }
                     ]
                 },
                 {
-                    title: "Symbols & Icons",
-                    color: "#1f2937",
+                    title: "Primary Full Logos",
+                    color: "var(--dark)",
+                    id: "sec-full",
+                    items: [
+                        { id: "full-dark", name: "Primary Logo (Dark)", file: "logo-full-dark", desc: "3-line stacked lockup. Reserved for legacy systems and email signatures.", bg: "bg-checkered" },
+                        { id: "full-light", name: "Primary Logo (Light)", file: "logo-full-light", desc: "3-line stacked lockup. Reserved for legacy systems and email signatures.", bg: "var(--dark)" }
+                    ]
+                },
+                {
+                    title: "Main Logos",
+                    color: "var(--text-muted)",
+                    id: "sec-main",
+                    items: [
+                        { id: "main-dark", name: "Main Logo (Dark)", file: "logo-main-dark", desc: "Cleaner 2-line text stack for standard UI representation.", bg: "bg-checkered" },
+                        { id: "main-light", name: "Main Logo (Light)", file: "logo-main-light", desc: "Cleaner 2-line text stack for standard UI representation.", bg: "var(--dark)" }
+                    ]
+                },
+                {
+                    title: "Minimal Logos",
+                    color: "var(--primary)",
+                    id: "sec-minimal",
+                    items: [
+                        { id: "min-dark", name: "Minimal Logo (Dark)", file: "logo-minimal-dark", desc: "Extremely compact, bottomless variant.", bg: "bg-checkered" },
+                        { id: "min-light", name: "Minimal Logo (Light)", file: "logo-minimal-light", desc: "Extremely compact, bottomless variant.", bg: "var(--dark)" },
+                        { id: "min-ex-dark", name: "Minimal Extended (Dark)", file: "logo-minimal-ex-dark", desc: "Bottomless variant with an extended horizontal footprint.", bg: "bg-checkered" },
+                        { id: "min-ex-light", name: "Minimal Extended (Light)", file: "logo-minimal-ex-light", desc: "Bottomless variant with an extended horizontal footprint.", bg: "var(--dark)" }
+                    ]
+                },
+                {
+                    title: "Quality of Life Slogans",
+                    color: "var(--success)",
+                    id: "sec-slogans",
+                    items: [
+                        { id: "slogan-dark", name: "Slogan Script (Dark)", file: "logo-slogan-dark", desc: "Corporate slogan. Pairs with sustainable project proposals.", bg: "bg-checkered" },
+                        { id: "slogan-gold", name: "Slogan Script (Gold)", file: "logo-slogan-gold", desc: "Corporate slogan. Pairs with sustainable project proposals.", bg: "bg-checkered" },
+                        { id: "slogan-light", name: "Slogan Script (Light)", file: "logo-slogan-light", desc: "Corporate slogan. Pairs with sustainable project proposals.", bg: "var(--dark)" }
+                    ]
+                },
+                {
+                    title: "Symbols & Avatars",
+                    color: "var(--dark)",
                     id: "sec-icons",
                     items: [
-                        { id: "icon-dark", name: "Icon Symbol (Dark)", file: "logo-icon-dark", desc: "Square avatar/favicon for light mode.", bg: "bg-checkered" },
-                        { id: "icon-light", name: "Icon Symbol (Light)", file: "logo-icon-light", desc: "Square avatar/favicon for dark mode.", bg: "#1f2937" }
-                    ]
-                },
-                {
-                    title: "Graphic Elements",
-                    color: "#4b5563",
-                    id: "sec-graphics",
-                    items: [
-                        { id: "part-g", name: "Graphic Element (G)", file: "logo-part-g", desc: "Abstract branding accent.", bg: "bg-checkered" }
+                        { id: "icon-dark", name: "Icon Avatar (Dark)", file: "logo-icon-dark", desc: "1:1 square avatar for light mode profiles.", bg: "bg-checkered" },
+                        { id: "icon-light", name: "Icon Avatar (Light)", file: "logo-icon-light", desc: "1:1 square avatar for dark mode profiles.", bg: "var(--dark)" },
+                        { id: "part-g", name: "Graphic Element (G)", file: "logo-part-g", desc: "Isolated geometric 'G' mark.", bg: "bg-checkered" },
+                        { id: "part-g-dark", name: "Graphic Element (G Dark)", file: "logo-part-g-dark", desc: "Isolated geometric 'G' mark.", bg: "bg-checkered" },
+                        { id: "part-g-gold", name: "Graphic Element (G Gold)", file: "logo-part-g-gold", desc: "Isolated geometric 'G' mark.", bg: "bg-checkered" },
+                        { id: "part-g-light", name: "Graphic Element (G Light)", file: "logo-part-g-light", desc: "Isolated geometric 'G' mark.", bg: "var(--dark)" },
+                        { id: "part-g-line-dark", name: "Graphic Element (G Line)", file: "logo-part-g-line-dark", desc: "Isolated line-art geometric 'G' mark.", bg: "bg-checkered" }
                     ]
                 }
             ],
             colors: [
-                { name: "Charcoal", hex: "#333333" },
-                { name: "Emaar Gold", hex: "#f1aa27" },
-                { name: "Off-White", hex: "#f4f4f4" },
-                { name: "Pure White", hex: "#ffffff" }
+                { name: "Brand Gold", hex: "#F1AA27" },
+                { name: "Brand Charcoal", hex: "#35383C" },
+                { name: "Soft White", hex: "#F9F9F9" }
             ]
         };
 
@@ -282,8 +317,8 @@
             const pngUrl = getUrl(item.file + '.png');
             const svgUrl = getUrl(item.file + '.svg');
             const uid = `card-${item.id}`;
-            const bgStyle = item.bg.startsWith('#') ? `background-color: ${item.bg}` : '';
-            const bgClass = item.bg.startsWith('#') ? '' : item.bg;
+            const bgStyle = item.bg.startsWith('#') || item.bg.startsWith('var') ? `background: ${item.bg}` : '';
+            const bgClass = item.bg.startsWith('#') || item.bg.startsWith('var') ? '' : item.bg;
 
             return `
                 <div class="card search-item" data-name="${item.name.toLowerCase()}">
@@ -294,7 +329,7 @@
                         <div class="controls">
                             <button class="ctrl-btn bg-checkered" onclick="setBg('${uid}', 'bg-checkered')" title="Transparent"></button>
                             <button class="ctrl-btn" style="background:#fff" onclick="setBg('${uid}', 'white')" title="White"></button>
-                            <button class="ctrl-btn" style="background:#1f2937" onclick="setBg('${uid}', '#1f2937')" title="Dark"></button>
+                            <button class="ctrl-btn" style="background:var(--dark)" onclick="setBg('${uid}', 'var(--dark)')" title="Dark"></button>
                         </div>
                     </div>
                     
@@ -353,14 +388,14 @@
         function setBg(id, value) {
             const el = document.getElementById(id);
             el.className = 'preview-area'; // Reset
-            el.style.backgroundColor = '';
+            el.style.background = '';
             
             if (value === 'bg-checkered') {
                 el.classList.add('bg-checkered');
             } else if (value === 'white') {
-                el.style.backgroundColor = '#ffffff';
+                el.style.background = '#ffffff';
             } else {
-                el.style.backgroundColor = value;
+                el.style.background = value;
             }
         }
 
