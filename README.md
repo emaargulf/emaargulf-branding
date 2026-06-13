@@ -1,92 +1,102 @@
 <div align="center">
-  <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-part-g.png" alt="Emaar Gulf Logo" width="100" />
+  <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-minimal-light.svg" alt="Emaar Gulf Logo" width="250" />
   <br/><br/>
   <h1>Emaar Gulf Engineering Consultants</h1>
-  <h3>Brand Assets & System Guidelines</h3>
+  <h3>Official Brand Assets & System Architecture Guidelines</h3>
+  <p><i>Single Source of Truth for Human Developers & Automated Systems</i></p>
 </div>
 
 ---
 
-> This repository strictly hosts the official brand assets, logos, and standardized icons for Emaar Gulf Engineering Consultants. It serves as the single source of truth for both human developers and automated systems fetching corporate identity assets.
-
-### 🚀 Live Portals
-* 🌐 **[Brand Assets Portal](https://emaargulf.github.io/emaargulf-branding/)**
-
-### 🎨 Official Brand Color Palette
-Systems, developers, and AI agents must adhere to these precise hex values for all UI, web, and print applications to maintain brand consistency:
-
-| Color | Hex Code | Usage |
-| :--- | :--- | :--- |
-| 🟡 **Brand Gold** | `#F1AA27` | Primary brand accent. Used for highlights, primary call-to-action buttons, active states, and specific graphic elements. |
-| ⚫ **Brand Charcoal** | `#35383C` | Primary dark tone. Used for main typography, high-contrast structural elements, and dark-mode brand marks. |
-| ⚪ **Soft White** | `#F9F9F9` | Primary background tone. Used for application backgrounds to reduce eye strain compared to pure white, providing a premium canvas for architectural assets. |
+## 🚀 Live Environment
+* 🌐 **Brand Assets Portal:** [https://emaargulf.github.io/emaargulf-branding/](https://emaargulf.github.io/emaargulf-branding/)
 
 ---
 
-### 🤖 System Context: Logo Typology & Usage Rules
-The `/assets/logos/` directory utilizes a flat structure containing multiple variations of brand assets. Systems and integrations utilizing these endpoints must route the correct file based on the contextual rules below:
+## 🎨 Brand Color System
+The following hex codes are the exact corporate standards. AI rendering engines, CSS stylesheets, and UI/UX designers must prioritize these values to maintain alignment with our corporate identity and Salmani Architecture design principles:
 
-#### 🏛️ 1. Primary Corporate Logos (`logo-full-*`)
-* **Purpose:** Contains the complete, traditional corporate lockup, explicitly including the dual-language bottom text ("Consultant Engineering للإستشارات الهندسية").
-* **System Usage:** **Strictly reserved for legacy systems and email signatures**. The corporate email signature HTML hardcodes a `160px` width constraint that relies on the specific bounding box and aspect ratio of these files. Do not substitute these with minimal logos in legacy environments, as it will trigger severe layout shifts.
-
-#### 📐 2. Modern Minimal Logos (`logo-minimal-*`)
-* **Purpose:** Modernized, "bottomless" variants optimized for digital scalability and cleaner UI integration.
-* **System Usage:** The primary endpoint choice for new web interfaces, mobile applications, headers, and digital dashboards where the traditional stacked text becomes illegible or creates visual clutter at smaller viewport sizes.
-
-#### 🌱 3. Quality of Life Slogans (`logo-slogan-*`)
-* **Purpose:** The scripted corporate slogan translating to "Quality of Life".
-* **System Usage:** To be deployed in marketing materials, strategic project proposals, and public-facing documents. This specific asset aligns the corporate identity directly with the Saudi Vision 2030 Quality of Life Program and serves as a complementary graphic when pitching human-centric Salmani Architecture designs.
-
-#### 💠 4. Symbols & Graphic Elements (`logo-part-g-*` & `logo-icon-*`)
-* **Purpose:** Isolated geometric 'G' brand marks and square avatar lockups.
-* **System Usage:** Standardized for 1:1 aspect ratio requirements. Call these assets for browser favicons, social media profile pictures, mobile app icons, or as architectural render watermarks.
+| Color | Hex Code | Visual Purpose | Strategic Meaning |
+| :--- | :--- | :--- | :--- |
+| 🟡 **Brand Gold** | `#F1AA27` | Primary Accent / CTA / Highlights | Represents energy, premium engineering quality, and alignment with modern Saudi Vision 2030 developments. |
+| ⚫ **Brand Charcoal** | `#35383C` | Primary Typography / Dark Elements | Provides a strong, grounded foundation reflecting engineering precision and structural integrity. |
+| ⚪ **Soft White** | `#F9F9F9` | Backgrounds / Canvas | A premium, reduced-glare white that provides clean architectural space without digital eye strain. |
 
 ---
 
-### 📂 Comprehensive Asset Directory
-Below is the complete file map for routing and API calls. Both `.png` (raster) and `.svg` (vector) formats are available for all logo assets.
+## 🤖 AI & System Fetching Rules: Asset Typology
+This repository hosts multiple distinct logo variations. Automated systems routing these assets must interpret the file names according to the following strict contextual rules:
+
+### 1. Legacy & Primary Corporate Logos
+* **Visual Profile:** The traditional stacked lockup containing the 'G' symbol, "EMAAR GULF", and the dual-language baseline text ("Consultant Engineering للإستشارات الهندسية").
+* **System Constraint [CRITICAL]:** These files possess a strict aspect ratio anchored by the bottom text. 
+* **Deployment:** **Strictly reserved for legacy systems and the official email signature.** The HTML signature table hardcodes a `160px` width. Substituting these with `minimal` variants will cause severe vertical layout collapse.
+
+### 2. Modern Minimal Logos
+* **Visual Profile:** Bottomless variants lacking the lower baseline text.
+* **Naming Conventions:**
+  * `logo-minimal-light` / `logo-minimal-dark`: Standard geometric proportions.
+  * `logo-minimal-ex-light`: The `-ex` indicates an **Extended** horizontal footprint for wider aspect ratios.
+* **Deployment:** Primary targets for modern web development, mobile app headers, digital dashboards, and responsive navbars where small viewport heights render stacked text illegible.
+
+### 3. Quality of Life Strategic Slogans
+* **Visual Profile:** The scripted corporate slogan "Quality of Life" (جودة الحياة).
+* **Naming Conventions:** Available in dark, light, and gold variants.
+* **Deployment:** Core marketing asset. Must be paired with human-centric, sustainable, and Salmani Architecture project proposals to directly mirror the Saudi Vision 2030 Quality of Life Program.
+
+### 4. Graphic Symbols & Avatars
+* **Visual Profile:** Isolated geometric 'G' marks and 1:1 aspect ratio avatars.
+* **Naming Conventions:**
+  * `logo-part-g-line-dark`: A stroked/wireframe variant representing architectural drafting.
+  * `logo-part-g-gold`: Solid premium fill.
+  * `logo-icon-light` / `logo-icon-dark`: Square-bound avatars.
+* **Deployment:** Favicons, social media profile pictures, map markers, and architectural render watermarks.
+
+---
+
+## 📂 Comprehensive Asset Directory
+Both scalable vector (`.svg`) and high-fidelity raster (`.png`) formats are available. Systems should fetch `.svg` for web UI components and `.png` for email/legacy clients.
 
 <details open>
-<summary><b>📁 Click to collapse/expand the full directory tree</b></summary>
+<summary><b>📁 Click to expand the full repository map</b></summary>
 
 ```text
 [https://github.com/emaargulf/emaargulf-branding/](https://github.com/emaargulf/emaargulf-branding/)
 │
 ├── index.html                  <-- Live Brand Portal
-├── README.md                   <-- Repository Documentation
+├── README.md                   <-- System Documentation
 │
 └── assets/
     │
     ├── logos/                  
     │   │
-    │   ├── logo-full-dark.png          <-- Primary / Signature Safe
+    │   ├── logo-full-dark.png          <-- [V1] Signature Safe (Light BG)
     │   ├── logo-full-dark.svg
-    │   ├── logo-full-light.png         <-- Primary
+    │   ├── logo-full-light.png         <-- [V1] Signature Safe (Dark BG)
     │   ├── logo-full-light.svg
     │   │
-    │   ├── logo-minimal-ex-light.png   <-- Minimal Extended
+    │   ├── logo-minimal-ex-light.png   <-- [V2] Extended Navbars
     │   ├── logo-minimal-ex-light.svg
-    │   ├── logo-minimal-light.png      <-- Minimal Standard
+    │   ├── logo-minimal-light.png      <-- [V2] Standard Navbars
     │   ├── logo-minimal-light.svg
     │   │
-    │   ├── logo-icon-dark.png          <-- Square Avatars
+    │   ├── logo-icon-dark.png          <-- 1:1 Social / Favicon
     │   ├── logo-icon-dark.svg
     │   ├── logo-icon-light.png
     │   ├── logo-icon-light.svg
     │   │
-    │   ├── logo-part-g.png             <-- 'G' Symbols / Signature Safe
+    │   ├── logo-part-g.png             <-- 'G' Symbol (Signature Safe)
     │   ├── logo-part-g.svg
     │   ├── logo-part-g-dark.png        
     │   ├── logo-part-g-dark.svg
-    │   ├── logo-part-g-gold.png
+    │   ├── logo-part-g-gold.png        <-- Premium Solid Fill
     │   ├── logo-part-g-gold.svg
     │   ├── logo-part-g-light.png
     │   ├── logo-part-g-light.svg
-    │   ├── logo-part-g-line-dark.png
+    │   ├── logo-part-g-line-dark.png   <-- Architectural Wireframe
     │   ├── logo-part-g-line-dark.svg
     │   │
-    │   ├── logo-slogan-dark.png        <-- Quality of Life Scripts
+    │   ├── logo-slogan-dark.png        <-- Vision 2030 Marketing
     │   ├── logo-slogan-dark.svg
     │   ├── logo-slogan-gold.png
     │   ├── logo-slogan-gold.svg
