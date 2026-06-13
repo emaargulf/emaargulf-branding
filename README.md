@@ -129,6 +129,5 @@ This repository hosts a strict 20-file ecosystem (available in both `.svg` and `
 
 **Maintained by:** nawavazhi  
 **Contact:** [nawavazhi@gmail.com](mailto:nawavazhi@gmail.com)  
-**Website:** [www.emaargulf.com](https://www.emaargulf.com)
 
 <!-- Developer/Author: archengsafdar@gmail.com -->
