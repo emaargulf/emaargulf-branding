@@ -124,13 +124,10 @@ This repository hosts a strict 20-file ecosystem (available in both `.svg` and `
         ├── snapchat.png
         ├── whatsapp.png
         └── x.png
-<br>
+```
 
-<div align="center">
-  <p>
-    <b>Maintained by:</b> nawavazhi<br>
-    <b>Contact:</b> <a href="mailto:nawavazhi@gmail.com">nawavazhi@gmail.com</a><br>
-    🌐 <a href="https://www.emaargulf.com">www.emaargulf.com</a>
-  </p>
-</div>
+**Maintained by:** nawavazhi  
+**Contact:** [nawavazhi@gmail.com](mailto:nawavazhi@gmail.com)  
+**Website:** [www.emaargulf.com](https://www.emaargulf.com)
+
 <!-- Developer/Author: archengsafdar@gmail.com -->
