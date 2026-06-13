@@ -125,6 +125,7 @@ This repository hosts a strict 20-file ecosystem (available in both `.svg` and `
         ├── whatsapp.png
         └── x.png
 ```
+</details>
 
 **Maintained by:** nawavazhi  
 **Contact:** [nawavazhi@gmail.com](mailto:nawavazhi@gmail.com)  
