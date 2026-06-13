@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-icon-dark.svg" alt="Emaar Gulf Icon" width="100" />
+  <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-main-light.svg" alt="Emaar Gulf Icon" width="100" />
   <br/><br/>
   <h1>Emaar Gulf Engineering Consultants</h1>
   <h3>Official Brand Assets & System Architecture</h3>
