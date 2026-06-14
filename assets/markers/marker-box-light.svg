@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.68 22.68">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f1aa27;
+      }
+
+      .cls-2 {
+        fill: #f9f9f9;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g id="LWPOLYLINE">
+        <path class="cls-1" d="M22.18.5v16.3l-4.67,4.67V5.17H1.21L5.88.5h16.3M22.68,0H5.67L0,5.67h17.01v17.01l5.67-5.67V0h0Z"/>
+      </g>
+      <rect class="cls-2" x="0" y="14.17" width="8.5" height="8.5"/>
+    </g>
+  </g>
+</svg>
