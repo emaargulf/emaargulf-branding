@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  pattern-g-tile.svg
+  68.03 × 68.03 transparent tile for CSS background-image repeat.
+
+  Use with:
+    background-image: url("pattern-g-tile.svg");
+    background-repeat: repeat;
+    background-size: 68.03px 68.03px;
+
+  Two motif instances per tile produce the diagonal checkerboard arrangement:
+    Motif A — origin (0, 0)
+    Motif B — origin (34.015, 34.015)
+  Four edge-wrap fragments close the seams at tile boundaries.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68.03 68.03" overflow="hidden">
+
+  <!-- Motif A (0, 0) -->
+  <path fill="#F1AA27" d="M22.18 26.01v16.3l-4.67 4.67v-16.3H1.21l4.67-4.67h16.3M22.68 25.51H5.67L0 31.18h17.01v17.01l5.67-5.67v-17.01Z"/>
+  <path fill="#F1AA27" d="M42.31 26.01l4.67 4.67h-16.3v16.3l-4.67-4.67v-16.3h16.3M42.52 25.51h-17.01v17.01l5.67 5.67v-17.01h17.01l-5.67-5.67Z"/>
+  <path fill="#F1AA27" d="M17.51 1.21l4.67 4.67v16.3H5.88l-4.67-4.67h16.3V1.21M17.01 0v17.01H0l5.67 5.67h17.01V5.67L17.01 0Z"/>
+  <path fill="#F1AA27" d="M30.68 1.21v16.3h16.3l-4.67 4.67h-16.3V5.88l4.67-4.67M31.18 0l-5.67 5.67v17.01h17.01l5.67-5.67h-17.01V0Z"/>
+
+  <!-- Motif B (34.015, 34.015) -->
+  <g transform="translate(34.015,34.015)">
+    <path fill="#F1AA27" d="M22.18 26.01v16.3l-4.67 4.67v-16.3H1.21l4.67-4.67h16.3M22.68 25.51H5.67L0 31.18h17.01v17.01l5.67-5.67v-17.01Z"/>
+    <path fill="#F1AA27" d="M42.31 26.01l4.67 4.67h-16.3v16.3l-4.67-4.67v-16.3h16.3M42.52 25.51h-17.01v17.01l5.67 5.67v-17.01h17.01l-5.67-5.67Z"/>
+    <path fill="#F1AA27" d="M17.51 1.21l4.67 4.67v16.3H5.88l-4.67-4.67h16.3V1.21M17.01 0v17.01H0l5.67 5.67h17.01V5.67L17.01 0Z"/>
+    <path fill="#F1AA27" d="M30.68 1.21v16.3h16.3l-4.67 4.67h-16.3V5.88l4.67-4.67M31.18 0l-5.67 5.67v17.01h17.01l5.67-5.67h-17.01V0Z"/>
+  </g>
+
+  <!-- Edge wraps — left tile's Motif B -->
+  <path fill="#F1AA27" transform="translate(-34.015,34.015)" d="M30.68 1.21v16.3h16.3l-4.67 4.67h-16.3V5.88l4.67-4.67M31.18 0l-5.67 5.67v17.01h17.01l5.67-5.67h-17.01V0Z"/>
+  <path fill="#F1AA27" transform="translate(-34.015,34.015)" d="M42.31 26.01l4.67 4.67h-16.3v16.3l-4.67-4.67v-16.3h16.3M42.52 25.51h-17.01v17.01l5.67 5.67v-17.01h17.01l-5.67-5.67Z"/>
+
+  <!-- Edge wraps — top tile's Motif B -->
+  <path fill="#F1AA27" transform="translate(34.015,-34.015)" d="M22.18 26.01v16.3l-4.67 4.67v-16.3H1.21l4.67-4.67h16.3M22.68 25.51H5.67L0 31.18h17.01v17.01l5.67-5.67v-17.01Z"/>
+  <path fill="#F1AA27" transform="translate(34.015,-34.015)" d="M42.31 26.01l4.67 4.67h-16.3v16.3l-4.67-4.67v-16.3h16.3M42.52 25.51h-17.01v17.01l5.67 5.67v-17.01h17.01l-5.67-5.67Z"/>
+
+</svg>
