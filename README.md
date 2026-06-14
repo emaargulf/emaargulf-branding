@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-main-light.svg" alt="Emaar Gulf Icon" width="300" />
+  <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-main-light.svg" alt="Emaar Gulf Main Logo" width="250" />
   <br/><br/>
   <h1>Emaar Gulf Engineering Consultants</h1>
   <h3>Official Brand Assets & System Architecture</h3>
@@ -8,23 +8,23 @@
 
 ---
 
-## 🚀 Live Environment
-* 🌐 **Brand Assets Portal:** [https://emaargulf.github.io/emaargulf-branding/](https://emaargulf.github.io/emaargulf-branding/)
+## ■ Live Environment
+* ◈ **Brand Assets Portal:** [https://emaargulf.github.io/emaargulf-branding/](https://emaargulf.github.io/emaargulf-branding/)
 
 ---
 
-## 🎨 Brand Color System
+## ■ Brand Color System
 The following hex codes are the exact corporate standards. UI/UX designers, developers, and AI rendering systems must prioritize these values to maintain alignment with our corporate identity and Salmani Architecture design principles:
 
 | Color | Hex Code | Visual Purpose | Strategic Meaning |
 | :--- | :--- | :--- | :--- |
-| 🟡 **Brand Gold** | `#F1AA27` | Primary Accent / CTA / Highlights | Represents energy, premium engineering quality, and alignment with modern Saudi Vision 2030 developments. |
-| ⚫ **Brand Charcoal** | `#35383C` | Primary Typography / Dark Elements | Provides a strong, grounded foundation reflecting engineering precision and structural integrity. |
-| ⚪ **Soft White** | `#F9F9F9` | Backgrounds / Canvas | A premium, reduced-glare white that provides clean architectural space without digital eye strain. |
+| <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-part-g-gold.svg" width="16" align="center"/> **Brand Gold** | `#F1AA27` | Primary Accent / CTA / Highlights | Represents energy, premium engineering quality, and alignment with modern Saudi Vision 2030 developments. |
+| <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-part-g-dark.svg" width="16" align="center"/> **Brand Charcoal** | `#35383C` | Primary Typography / Dark Elements | Provides a strong, grounded foundation reflecting engineering precision and structural integrity. |
+| <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-part-g-light.svg" width="16" align="center"/> **Soft White** | `#F9F9F9` | Backgrounds / Canvas | A premium, reduced-glare white that provides clean architectural space without digital eye strain. |
 
 ---
 
-## 🤖 System Fetching Rules: Asset Typology
+## ■ System Fetching Rules: Asset Typology
 This repository hosts a strict 20-file ecosystem (available in both `.svg` and `.png`). Automated systems routing these assets must interpret the file names according to the following contextual rules:
 
 ### 1. Extended Legal Logos (`logo-extended-dark` / `logo-extended-light`)
@@ -53,9 +53,9 @@ This repository hosts a strict 20-file ecosystem (available in both `.svg` and `
 
 ---
 
-## 📂 Comprehensive Asset Directory
+## ■ Comprehensive Asset Directory
 <details open>
-<summary><b>📁 Click to expand the full repository map</b></summary>
+<summary><b>Click to expand the full repository map</b></summary>
 
 ```text
 [https://github.com/emaargulf/emaargulf-branding/](https://github.com/emaargulf/emaargulf-branding/)
