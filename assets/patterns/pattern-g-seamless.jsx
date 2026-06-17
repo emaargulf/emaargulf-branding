@@ -10,10 +10,6 @@ import { useId } from "react";
  *  color       string          bracket fill color (default: "#F1AA27" gold)
  *  background  string          background fill (default: "transparent")
  *  className   string          extra class names
- *
- * Usage
- *  <PatternGSeamless width="100%" height="400px" background="#1C1C2E" />
- *  <PatternGSeamless color="#ffffff" background="#0a0a0a" />
  */
 
 const D1 = "M22.18 26.01v16.3l-4.67 4.67v-16.3H1.21l4.67-4.67h16.3M22.68 25.51H5.67L0 31.18h17.01v17.01l5.67-5.67v-17.01Z";
@@ -46,27 +42,19 @@ export default function PatternGSeamless({
           width="68.03" height="68.03"
           patternUnits="userSpaceOnUse"
         >
-          {/* Motif A — (0, 0) */}
-          <path fill={color} d={D1} />
-          <path fill={color} d={D2} />
-          <path fill={color} d={D3} />
-          <path fill={color} d={D4} />
-
-          {/* Motif B — (34.015, 34.015) */}
-          <g transform="translate(34.015,34.015)">
+          {/* Central motif — centered at (34.015, 34.015) */}
+          <g transform="translate(9.92,9.92)">
             <path fill={color} d={D1} />
             <path fill={color} d={D2} />
             <path fill={color} d={D3} />
             <path fill={color} d={D4} />
           </g>
 
-          {/* Edge wraps — left tile's Motif B */}
-          <path fill={color} transform="translate(-34.015,34.015)" d={D4} />
-          <path fill={color} transform="translate(-34.015,34.015)" d={D2} />
-
-          {/* Edge wraps — top tile's Motif B */}
-          <path fill={color} transform="translate(34.015,-34.015)" d={D1} />
-          <path fill={color} transform="translate(34.015,-34.015)" d={D2} />
+          {/* Corner / edge seam fragments */}
+          <path fill={color} transform="translate(43.935,43.935)"  d={D3} />
+          <path fill={color} transform="translate(-24.095,43.935)" d={D4} />
+          <path fill={color} transform="translate(43.935,-24.095)" d={D1} />
+          <path fill={color} transform="translate(-24.095,-24.095)" d={D2} />
         </pattern>
       </defs>
 
