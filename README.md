@@ -2,6 +2,7 @@
   <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-main-dark.svg" height="64" alt="Emaar Gulf Engineering Consultants"/>
   <br/><br/>
   <p><strong>Official Brand Assets & Design System</strong><br/>
+  إعمار الخليج للاستشارات الهندسية — Single Source of Truth</p>
   <br/>
   <a href="https://emaargulf.github.io/emaargulf-branding/"><img src="https://img.shields.io/badge/Brand_Portal-Live-F1AA27?style=flat-square&labelColor=35383C"/></a>
   <img src="https://img.shields.io/badge/Logos-20_files-35383C?style=flat-square"/>
@@ -67,10 +68,10 @@ CDN: https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/marker
 | **glyph-g** | `.svg` · `-animated.svg` · `-gold.svg` · `.jsx` · `-animated.jsx` · `.css` | Angular G brand mark with draw-on stroke animation |
 | **glyph-pattern-g** | *(in development)* | Animated bracket pattern glyph |
 
-→ See [`assets/animations/glyph-g/README.md`](assets/animations/glyph-g/README.md) for usage docs.
+→ See [`assets/animations/README.md`](assets/animations/README.md) for usage docs.
 
 ```
-CDN: https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/animations/glyph-g/glyph-g-animated-gold.svg
+CDN: https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/animations/glyph-g-animated-gold.svg
 ```
 
 ---
@@ -81,10 +82,10 @@ CDN: https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/animat
 |-------|-------|-------------|
 | **pattern-g** | `.svg` · `-tile.svg` · `-seamless.svg` · `.css` · `-seamless.css` · `.jsx` · `-seamless.jsx` · `-sample.svg` | Diagonal bracket checkerboard — CSS and React |
 
-→ See [`assets/patterns/pattern-g/README.md`](assets/patterns/pattern-g/README.md) for usage docs.
+→ See [`assets/patterns/README.md`](assets/patterns/README.md) for usage docs.
 
 ```
-CDN: https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/patterns/pattern-g/pattern-g-tile.svg
+CDN: https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/patterns/pattern-g-tile.svg
 ```
 
 ---
@@ -132,8 +133,8 @@ https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/
 | Main logo (dark) | `assets/logos/logo-main-dark.svg` |
 | Icon avatar | `assets/logos/logo-icon-dark.svg` |
 | Gold marker | `assets/markers/marker-base-gold.svg` |
-| Glyph animated | `assets/animations/glyph-g/glyph-g-animated-gold.svg` |
-| Pattern tile | `assets/patterns/pattern-g/pattern-g-tile.svg` |
+| Glyph animated | `assets/animations/glyph-g-animated-gold.svg` |
+| Pattern tile | `assets/patterns/pattern-g-tile.svg` |
 
 ---
 
