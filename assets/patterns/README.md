@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://emaargulf.github.io/emaargulf-branding/assets/patterns/pattern-g-seamless.svg" height="80" alt="pattern-g"/>
+  <img src="https://emaargulf.github.io/emaargulf-branding/assets/patterns/pattern-g.svg" height="80" alt="pattern-g"/>
   <br/><br/>
   <h1>patterns</h1>
   <p>Seamless diagonal bracket pattern — CSS, React, and standalone SVG</p>
