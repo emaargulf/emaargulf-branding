@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://emaargulf.github.io/emaargulf-branding/assets/patterns/pattern-g/pattern-g-seamless.svg" height="80" alt="pattern-g"/>
+  <img src="https://emaargulf.github.io/emaargulf-branding/assets/patterns/pattern-g/pattern-g.svg" height="80" alt="pattern-g"/>
   <br/><br/>
   <h1>pattern-g</h1>
   <p>Seamless diagonal bracket pattern — derived from the brand glyph geometry</p>
