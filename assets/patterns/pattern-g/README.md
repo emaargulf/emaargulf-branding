@@ -1,7 +1,13 @@
-# pattern-g
-
-Seamless decorative background pattern built from the brand glyph's angular bracket
-motifs, arranged on a diagonal checkerboard grid.
+<div align="center">
+  <img src="https://emaargulf.github.io/emaargulf-branding/assets/patterns/pattern-g/pattern-g-seamless.svg" height="80" alt="pattern-g"/>
+  <br/><br/>
+  <h1>pattern-g</h1>
+  <p>Seamless diagonal bracket pattern — derived from the brand glyph geometry</p>
+  <br/>
+  <img src="https://img.shields.io/badge/SVG-Seamless_Tile-F1AA27?style=flat-square&labelColor=35383C"/>
+  <img src="https://img.shields.io/badge/React-JSX-35383C?style=flat-square"/>
+  <img src="https://img.shields.io/badge/CSS-Background-35383C?style=flat-square"/>
+</div>
 
 ---
 
@@ -9,117 +15,85 @@ motifs, arranged on a diagonal checkerboard grid.
 
 | File | Description |
 |------|-------------|
-| `pattern-g.svg` | Dense 48.19 × 48.19 tile (4 bracket corners, for CSS dense grid) |
-| `pattern-g-tile.svg` | Seamless 68.03 × 68.03 tile for CSS `background-image` |
-| `pattern-g-seamless.svg` | Standalone preview SVG (dark navy background) |
-| `pattern-g-sample.svg` | Reference layout showing the diagonal arrangement |
-| `pattern-g.css` | CSS class — dense grid variant (48.19 px tile) |
-| `pattern-g-seamless.css` | CSS class — diagonal checkerboard variant (68.03 px tile) |
-| `pattern-g.jsx` | React component — dense grid (CSS `background-image`) |
-| `pattern-g-seamless.jsx` | React component — diagonal checkerboard (inline SVG pattern) |
+| `pattern-g.svg` | Dense 48.19 × 48.19 tile · 4 bracket corners |
+| `pattern-g-tile.svg` | Seamless 68.03 × 68.03 tile · for CSS `background-image` |
+| `pattern-g-seamless.svg` | Standalone preview · dark background |
+| `pattern-g-sample.svg` | Reference showing the diagonal arrangement |
+| `pattern-g.css` | `.pattern-g` class · dense 48 px grid |
+| `pattern-g-seamless.css` | `.pattern-g-seamless` class · diagonal 68 px tile |
+| `pattern-g.jsx` | React component · CSS background approach |
+| `pattern-g-seamless.jsx` | React component · inline SVG pattern · no external files |
 
 ---
 
-## Pattern geometry
+## Geometry
 
 | Property | Value |
 |----------|-------|
-| Motif bounding box | 48.19 × 48.19 px |
-| CSS dense tile size | 48.19 px |
-| CSS seamless tile size | 68.03 px |
-| Diagonal motif step | 34.015 px (half tile) |
-| Gold color | `#F1AA27` |
-| Dark navy | `#1C1C2E` |
-
-The seamless tile contains two motif instances offset diagonally by `(34.015, 34.015)`,
-plus four edge-wrap path fragments that close the seams at tile boundaries.
+| Motif size | 48.19 × 48.19 px |
+| Tile repeat (dense) | 48.19 px |
+| Tile repeat (seamless) | 68.03 px |
+| Diagonal step | 34.015 px |
 
 ---
 
 ## Usage
 
-### CSS — diagonal checkerboard (recommended)
+### CSS — local
 
 ```css
-@import url("pattern-g-seamless.css");
+/* dense grid */
+background-image: url("pattern-g.svg");
+background-repeat: repeat;
+background-size: 48.19px 48.19px;
 
-.hero {
-    @apply pattern-g-seamless pattern-g-dark;
-    height: 400px;
-}
-```
-
-Or directly:
-
-```css
-.hero {
-    background-image: url("pattern-g-tile.svg");
-    background-repeat: repeat;
-    background-size: 68.03px 68.03px;
-    background-color: #1C1C2E;
-}
+/* diagonal checkerboard (recommended) */
+background-image: url("pattern-g-tile.svg");
+background-repeat: repeat;
+background-size: 68.03px 68.03px;
+background-color: #35383C;
 ```
 
 ### CSS — CDN
 
 ```css
-.hero {
-    background-image: url("https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/animation/pattern-g/pattern-g-tile.svg");
-    background-repeat: repeat;
-    background-size: 68.03px 68.03px;
-    background-color: #1C1C2E;
-}
+background-image: url("https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/patterns/pattern-g/pattern-g-tile.svg");
+background-repeat: repeat;
+background-size: 68.03px 68.03px;
+background-color: #35383C;
 ```
 
-### React — inline SVG (no external files, recommended)
+### React — inline SVG (recommended — no external files)
 
 ```jsx
-import PatternGSeamless from "./pattern-g-seamless.jsx";
+import PatternGSeamless from './pattern-g-seamless.jsx';
 
-// Full-width hero section
-<PatternGSeamless
-  width="100%"
-  height="400px"
-  color="#F1AA27"
-  background="#1C1C2E"
-/>
-
-// Custom color
-<PatternGSeamless color="#ffffff" background="#0a0a0a" />
+<PatternGSeamless width="100%" height="400px" color="#F1AA27" background="#35383C" />
 ```
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `width` | string \| number | `"100%"` | SVG element width |
-| `height` | string \| number | `"100%"` | SVG element height |
-| `color` | string | `"#F1AA27"` | Bracket fill color |
-| `background` | string | `"transparent"` | Background fill |
-| `className` | string | `""` | Extra CSS classes |
+| `width` | `string\|number` | `"100%"` | SVG width |
+| `height` | `string\|number` | `"100%"` | SVG height |
+| `color` | `string` | `"#F1AA27"` | Bracket fill color |
+| `background` | `string` | `"transparent"` | Background fill |
+| `className` | `string` | `""` | Extra CSS classes |
 
-### React — CSS background approach
-
-```jsx
-import PatternG from "./pattern-g.jsx";
-
-<PatternG width="100%" height="400px" />
-```
-
-### Standalone SVG embed
+### HTML — standalone embed
 
 ```html
 <img
-  src="https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/animation/pattern-g/pattern-g-seamless.svg"
-  width="400"
-  alt=""
-  aria-hidden="true"
+  src="https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/patterns/pattern-g/pattern-g-seamless.svg"
+  width="400" alt="" aria-hidden="true"
 />
 ```
 
 ---
 
-## Brand colors
+## Brand Colors
 
 | Name | Hex |
 |------|-----|
 | Gold | `#F1AA27` |
-| Dark navy | `#1C1C2E` |
+| Charcoal | `#35383C` |
+| Soft White | `#F9F9F9` |
