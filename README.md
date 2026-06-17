@@ -2,6 +2,7 @@
   <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-main-dark.svg" height="64" alt="Emaar Gulf Engineering Consultants"/>
   <br/><br/>
   <p><strong>Official Brand Assets & Design System</strong><br/>
+  إعمار الخليج للاستشارات الهندسية — Single Source of Truth</p>
   <br/>
   <a href="https://emaargulf.github.io/emaargulf-branding/"><img src="https://img.shields.io/badge/Brand_Portal-Live-F1AA27?style=flat-square&labelColor=35383C"/></a>
   <img src="https://img.shields.io/badge/Logos-20_files-35383C?style=flat-square"/>
