@@ -2,30 +2,48 @@
   <img src="https://emaargulf.github.io/emaargulf-branding/assets/markers/marker-base-gold.svg" height="56" alt="Emaar Gulf Markers"/>
   <br/><br/>
   <h1>markers</h1>
-  <p>Brand marker elements — map pins, bullets, boxes, and pattern accents</p>
+  <p>Brand UI markers — map pins, list bullets, boxes, and pattern accents</p>
   <br/>
-  <img src="https://img.shields.io/badge/Variants-12_files-F1AA27?style=flat-square&labelColor=35383C"/>
+  <img src="https://img.shields.io/badge/Types-4-F1AA27?style=flat-square&labelColor=35383C"/>
+  <img src="https://img.shields.io/badge/Colors-Gold_%7C_Dark_%7C_Light-35383C?style=flat-square"/>
   <img src="https://img.shields.io/badge/Format-SVG_%2B_PNG-35383C?style=flat-square"/>
 </div>
 
 ---
 
-## Files
+## Variants
 
-| Type | Gold | Dark | Light | Description |
-|------|:----:|:----:|:-----:|-------------|
-| **base** | `marker-base-gold` | `marker-base-dark` | `marker-base-light` | Core highlight segment · map markers |
-| **bullet** | `marker-bullet-gold` | `marker-bullet-dark` | `marker-bullet-light` | Rotated 315° · list bullets · chevrons |
-| **box** | — | `marker-box-dark` | `marker-box-light` | UI checkboxes · standard block markers |
-| **pattern** | `marker-pattern-gold` | `marker-pattern-dark` | `marker-pattern-light` | Decorative bracket pattern accent |
+| Type | Gold | Dark | Light | Usage |
+|------|:----:|:----:|:-----:|-------|
+| **base** | ✓ | ✓ | ✓ | Map pins · highlight segments · section dividers |
+| **bullet** | ✓ | ✓ | ✓ | List bullets · chevrons · directional indicators |
+| **box** | — | ✓ | ✓ | Checkboxes · standard UI block markers |
+| **pattern** | ✓ | ✓ | ✓ | Decorative bracket pattern accent |
 
-Each file is available in both `.svg` and `.png`.
+Each variant is available as `.svg` and `.png`.  
+`marker-box` has no gold variant. All others have gold, dark, and light.
+
+---
+
+## File List
+
+```
+marker-base-gold.svg/png
+marker-base-dark.svg/png
+marker-base-light.svg/png
+marker-bullet-gold.svg/png
+marker-bullet-dark.svg/png
+marker-bullet-light.svg/png
+marker-box-dark.svg/png
+marker-box-light.svg/png
+marker-pattern-gold.svg/png
+marker-pattern-dark.svg/png
+marker-pattern-light.svg/png
+```
 
 ---
 
 ## Usage
-
-### HTML — `<img>` embed
 
 ```html
 <!-- Gold base marker -->
@@ -33,41 +51,25 @@ Each file is available in both `.svg` and `.png`.
   src="https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/markers/marker-base-gold.svg"
   height="24" alt=""
 />
-
-<!-- Dark bullet marker -->
-<img
-  src="https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/markers/marker-bullet-dark.svg"
-  height="24" alt=""
-/>
 ```
 
-### CSS — inline SVG background
-
 ```css
+/* Bullet list via CSS */
 .list-item::before {
   content: '';
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-image: url("https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/markers/marker-bullet-gold.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
+  width: 18px;
+  height: 18px;
+  background: url("https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/markers/marker-bullet-gold.svg") center/contain no-repeat;
   margin-right: 8px;
+  vertical-align: middle;
 }
-```
-
-### CDN base
-
-```
-https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/markers/
 ```
 
 ---
 
-## Brand Colors
+## CDN base
 
-| Name | Hex |
-|------|-----|
-| Gold | `#F1AA27` |
-| Charcoal | `#35383C` |
-| Soft White | `#F9F9F9` |
+```
+https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/markers/
+```
