@@ -4,10 +4,10 @@
   <p><strong>Official Brand Assets & Design System</strong><br/>
   <br/>
   <a href="https://emaargulf.github.io/emaargulf-branding/"><img src="https://img.shields.io/badge/Brand_Portal-Live-F1AA27?style=flat-square&labelColor=35383C"/></a>
-  <img src="https://img.shields.io/badge/Logos-20_files-35383C?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Markers-12_files-35383C?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Animations-7_files-35383C?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Patterns-9_files-35383C?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Logos-21_files-35383C?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Markers-15_files-35383C?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Animations-6_files-35383C?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Patterns-8_files-35383C?style=flat-square"/>
 </div>
 
 ---
@@ -24,7 +24,7 @@
 
 ## ◈ Asset Directory
 
-### Logos `assets/logos/` — 20 variants · SVG + PNG
+### Logos `assets/logos/` — 21 variants · SVG + PNG
 
 | Variant | Dark | Light | Usage |
 |---------|------|-------|-------|
@@ -33,7 +33,7 @@
 | **Extended** | `logo-extended-dark` | `logo-extended-light` | Legal documents · wide headers |
 | **Minimal** | `logo-minimal-dark` | `logo-minimal-light` | Navbars · mobile · dashboards |
 | **Minimal Extended** | `logo-minimal-ex-dark` | `logo-minimal-ex-light` | Horizontal compact layouts |
-| **Slogan** | `logo-slogan-dark` · `logo-slogan-gold` | `logo-slogan-light` | Marketing · proposals |
+| **Slogan** | `logo-slogan-dark` · `logo-slogan-gold` · `logo-slogan-mix` | `logo-slogan-light` | Marketing · proposals |
 | **Icon Avatar** | `logo-icon-dark` | `logo-icon-light` | Favicons · social profiles |
 | **G Symbol** | `logo-part-g` · `logo-part-g-dark` · `logo-part-g-line-dark` | `logo-part-g-light` · `logo-part-g-gold` | Watermarks · brand elements |
 
@@ -43,7 +43,7 @@ CDN: https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/logos/
 
 ---
 
-### Markers `assets/markers/` — 12 variants · SVG + PNG
+### Markers `assets/markers/` — 15 variants · SVG + PNG
 
 | Type | Gold | Dark | Light | Usage |
 |------|:----:|:----:|:-----:|-------|
@@ -51,6 +51,8 @@ CDN: https://cdn.jsdelivr.net/gh/emaargulf/emaargulf-branding@main/assets/logos/
 | **Bullet** | ✓ | ✓ | ✓ | Lists · chevrons · directions |
 | **Box** | — | ✓ | ✓ | UI checkboxes · standard markers |
 | **Pattern** | ✓ | ✓ | ✓ | Decorative brand-pattern element |
+
+`bullet` and `pattern` also ship solid **filled** variants (`marker-bullet-filled-*`, `marker-pattern-filled-*`) — gold and dark only, no filled-light.
 
 → See [`assets/markers/README.md`](assets/markers/README.md) for full usage docs.
 
