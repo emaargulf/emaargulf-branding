@@ -23,6 +23,8 @@
 Each variant is available as `.svg` and `.png`.  
 `marker-box` has no gold variant. All others have gold, dark, and light.
 
+`bullet` and `pattern` additionally ship a solid **filled** style — `marker-bullet-filled-*` and `marker-pattern-filled-*` — gold and dark only, no filled-light.
+
 ---
 
 ## File List
@@ -34,11 +36,15 @@ marker-base-light.svg/png
 marker-bullet-gold.svg/png
 marker-bullet-dark.svg/png
 marker-bullet-light.svg/png
+marker-bullet-filled-gold.svg/png
+marker-bullet-filled-dark.svg/png
 marker-box-dark.svg/png
 marker-box-light.svg/png
 marker-pattern-gold.svg/png
 marker-pattern-dark.svg/png
 marker-pattern-light.svg/png
+marker-pattern-filled-gold.svg/png
+marker-pattern-filled-dark.svg/png
 ```
 
 ---
