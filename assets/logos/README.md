@@ -2,9 +2,9 @@
   <img src="https://emaargulf.github.io/emaargulf-branding/assets/logos/logo-main-dark.svg" height="56" alt="Emaar Gulf"/>
   <br/><br/>
   <h1>logos</h1>
-  <p>Official Emaar Gulf logo system — 20 variants · SVG + PNG</p>
+  <p>Official Emaar Gulf logo system — 21 variants · SVG + PNG</p>
   <br/>
-  <img src="https://img.shields.io/badge/Variants-20-F1AA27?style=flat-square&labelColor=35383C"/>
+  <img src="https://img.shields.io/badge/Variants-21-F1AA27?style=flat-square&labelColor=35383C"/>
   <img src="https://img.shields.io/badge/Format-SVG_%2B_PNG-35383C?style=flat-square"/>
 </div>
 
@@ -19,7 +19,7 @@
 | 3 | **Extended** | `logo-extended-dark` · `logo-extended-light` | Legal documents · wide headers · contracts |
 | 4 | **Minimal** | `logo-minimal-dark` · `logo-minimal-light` | Navbars · mobile · dashboards |
 | 5 | **Minimal Extended** | `logo-minimal-ex-dark` · `logo-minimal-ex-light` | Horizontal compact layouts |
-| 6 | **Slogan** | `logo-slogan-dark` · `logo-slogan-gold` · `logo-slogan-light` | Marketing · Vision 2030 proposals |
+| 6 | **Slogan** | `logo-slogan-dark` · `logo-slogan-gold` · `logo-slogan-mix` · `logo-slogan-light` | Marketing · Vision 2030 proposals |
 | 7 | **Icon Avatar** | `logo-icon-dark` · `logo-icon-light` | 1:1 square — favicons · social profiles |
 | 8 | **G Symbol** | `logo-part-g` · `logo-part-g-dark` · `logo-part-g-gold` · `logo-part-g-light` · `logo-part-g-line-dark` | Watermarks · map markers · renders |
 
