@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48.19 48.19">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #35383c;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g id="LWPOLYLINE">
+        <polygon class="cls-1" points="22.68 25.51 22.68 42.52 17.01 48.19 17.01 31.18 0 31.18 5.67 25.51 22.68 25.51"/>
+      </g>
+      <g id="LWPOLYLINE-2" data-name="LWPOLYLINE">
+        <polygon class="cls-1" points="25.51 25.51 25.51 42.52 31.18 48.19 31.18 31.18 48.19 31.18 42.52 25.51 25.51 25.51"/>
+      </g>
+      <g id="LWPOLYLINE-3" data-name="LWPOLYLINE">
+        <polygon class="cls-1" points="22.68 22.68 22.68 5.67 17.01 0 17.01 17.01 0 17.01 5.67 22.68 22.68 22.68"/>
+      </g>
+      <g id="LWPOLYLINE-4" data-name="LWPOLYLINE">
+        <polygon class="cls-1" points="25.51 22.68 25.51 5.67 31.18 0 31.18 17.01 48.19 17.01 42.52 22.68 25.51 22.68"/>
+      </g>
+    </g>
+  </g>
+</svg>
